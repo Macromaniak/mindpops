@@ -1,0 +1,62 @@
+[20-Jul-2021 14:44:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 49
+[20-Jul-2021 14:47:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 49
+[20-Jul-2021 14:47:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 107
+[20-Jul-2021 14:48:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 50
+[20-Jul-2021 14:48:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 14:48:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 50
+[20-Jul-2021 14:48:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 14:48:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 50
+[20-Jul-2021 14:48:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:37 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:47 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:49:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 59
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to access array offset on value of type null in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 60
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'term_id' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:50:23 UTC] PHP Notice:  Trying to get property 'name' of non-object in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 63
+[20-Jul-2021 14:50:23 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 14:50:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 14:51:07 UTC] PHP Warning:  Invalid argument supplied for foreach() in /var/www/html/mindpops/wp-content/themes/travel-agency/front-page.php on line 108
+[20-Jul-2021 16:51:20 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/packages.php on line 39
+[20-Jul-2021 16:58:07 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/packages.php on line 39
+[20-Jul-2021 18:09:37 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/packages.php on line 39
+[20-Jul-2021 18:09:52 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/package-offers.php on line 39
+[20-Jul-2021 18:10:52 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/package-offers.php on line 39
+[20-Jul-2021 18:14:11 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/package-offers.php on line 39
+[20-Jul-2021 18:15:03 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/package-offers.php on line 39
+[20-Jul-2021 18:15:50 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/package-offers.php on line 39
+[20-Jul-2021 18:17:13 UTC] PHP Notice:  Undefined variable: cat_id in /var/www/html/mindpops/wp-content/themes/travel-agency/templates/package-offers.php on line 39
