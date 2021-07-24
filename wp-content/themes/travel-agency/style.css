@@ -8240,9 +8240,19 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     font-size: 20px;
 }
 
-.contact-left input{
-    width: 100%;
+.contact-left input,
+.contact-left select
+{
+    width: 90%;
+    color: #111;
     margin-bottom: 20px;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    height: 45px;
+}
+.form-col{
+    background: #f6f6f6;
+    padding-top: 60px !important;
 }
 .wpcf7-submit{
     width: 30% !important;
@@ -8540,6 +8550,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .popup-box-form-submit .grid-form {
     display: inline-block;
+    width: 100%;
 }
 .popup-box-form-submit .grid-form .col-6 {
     width: 100%;
@@ -8631,7 +8642,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
   right: 54px;
   width: 35px;
   height: 35px;
-  background-image: url("http://localhost/mindpops/wp-content/uploads/2021/07/right-arrow.png");
+  background-image: url("/wp-content/uploads/2021/07/right-arrow.png");
   background-size: contain;
     background-position-x: right;
     background-repeat: no-repeat;
@@ -8645,7 +8656,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
   z-index: 1;
    width: 35px;
   height: 35px;
-  background-image: url("http://localhost/mindpops/wp-content/uploads/2021/07/left-arrow.png");
+  background-image: url("/wp-content/uploads/2021/07/left-arrow.png");
    background-size: contain;
     background-position-x: right;
     background-repeat: no-repeat;
@@ -8727,11 +8738,18 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .grid-form{
     display: block;
+    width: 100%;
 }
 .grid-form .col-6{
     width: 100%;
     float: left;
     padding:0px 15px;
+}
+.contact-left input, .contact-left select {
+    width: 95%;
+}
+.form-col{
+    margin-bottom: 30px;
 }
 }
 

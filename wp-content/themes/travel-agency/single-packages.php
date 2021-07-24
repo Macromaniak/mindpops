@@ -95,7 +95,7 @@
                   </span></li>
                   <li>Place Covered:<span class="subtxt"><?php the_field('places_covered'); ?></span></li>
                   <li>Note:<span class="subtxt"><?php the_field('note'); ?></span></li>
-                  <li><a href="">Terms and Conditions</a>
+                  <li><a href="<?php echo get_site_url(); ?>/terms-and-conditions/">Terms and Conditions</a>
                </ul>
                <a href="" class="btn-more">Book Now</a>
             </div>

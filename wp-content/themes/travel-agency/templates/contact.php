@@ -12,7 +12,7 @@ get_template_part('template-parts/banner-innerpage'); ?>
          			<?php the_field('map_section'); ?>
          		</div>
          	</div>
-         	<div class="col-6">
+         	<div class="col-6 form-col">
          		<div class="contact-left">
          			<?php echo do_shortcode('[contact-form-7 id="108" title="Contact Us"]'); ?>
          		</div>

@@ -52,8 +52,8 @@ if( ! function_exists( 'travel_agency_header' ) ) :
 function travel_agency_header(){     
     $phone       = get_field('header_right_phone', 'theme_options');
     $phone_label = get_field('header_right_text', 'theme_options');
-    // $ed_social   = get_theme_mod( 'ed_social_links', true );
-    // $ed_search   = get_theme_mod( 'ed_search', true ); 
+    $ed_social   = get_theme_mod( 'ed_social_links', true );
+    $ed_search   = get_theme_mod( 'ed_search', true ); 
     ?>
     <header id="masthead" class="site-header" itemscope itemtype="https://schema.org/WPHeader">
 		

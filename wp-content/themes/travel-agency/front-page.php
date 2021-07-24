@@ -56,7 +56,7 @@ $category_block_description = get_field('category_block_description');
          <!-- .col -->
          <div class="col">
             <div class="img-holder">
-               <a href="<?php echo site_url().'/all-packages/?cat='.$cat->term_id; ?>">
+               <a href="<?php echo site_url().'/packages/?cat='.$cat->term_id; ?>">
                <img width="300" height="300" src="<?php echo $cat_img['url']; ?>" class="attachment-travel-agency-popular-small size-travel-agency-popular-small wp-post-image" alt="<?php echo $cat_img['alt']; ?>" loading="lazy" >									</a>
                <span class="price-holder"><span>starting From<br><strong>$ <?php echo $cat_price; ?></strong></span></span>									
                <div class="text-holder">
@@ -78,7 +78,7 @@ $category_block_description = get_field('category_block_description');
        
       </div>
       <!-- .grid -->
-      <div class="btn-holder"><a href="<?php echo site_url(); ?>/all-packages/" class="btn-more">View All Packages</a></div>
+      <div class="btn-holder"><a href="<?php echo site_url(); ?>/packages/" class="btn-more">View All Packages</a></div>
    </div>
    <!-- .container-large -->
 </section>
@@ -174,7 +174,7 @@ $packages_block_description = get_field('packages_block_description');
      // endif;
          ?>
     </div>
-    <div class="btn-holder deal-btn-holder"><a href="<?php echo site_url(); ?>/all-packages/" class="btn-more deal-btn-more">View All Deals</a></div>
+    <div class="btn-holder deal-btn-holder"><a href="<?php echo site_url(); ?>/packages/" class="btn-more deal-btn-more">View All Deals</a></div>
     </div>
 </section>
 

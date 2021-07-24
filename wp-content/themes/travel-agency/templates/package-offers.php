@@ -123,7 +123,7 @@ $cat_id = $_GET['pcat'];
                      <div class="col">
                         <div class="holder">
                            <div class="img-holder">
-                              <a href="https://rarathemesdemo.com/travel-agency/trip/langtang-trek/">
+                              <a href="<?php echo the_permalink(); ?>">
                               <img width="410" height="250" src="<?php the_post_thumbnail_url(); ?>" alt="" loading="lazy">
                               </a>
                               <span class="price-holder"><span><?php if(!empty($package_discounted_price)){ ?><strike><?php echo 'INR '. $package_original_price; ?></strike> <?php echo 'INR '. $package_discounted_price; } else { echo 'INR '. $package_original_price; } ?></span></span><span class="discount-holder"><?php if(!empty($package_discount_percentage)){ ?><span><?php echo $package_discount_percentage; ?>%</span><?php }?></span>                              
@@ -167,18 +167,42 @@ $cat_id = $_GET['pcat'];
                                        <div class="more-ul" id="more-ul-<?php echo $post->ID; ?>">
                               		 
                                           <div class="inclusion-exclusion">
+                                            <?php $exclusions = get_field('exclusions');
+                                                       $inclutions = get_field('inclutions');
+                                                       
+                                                       if(!empty($inclutions)): ?>
                                              <div class="inc">
                                                 <h3>Inclusions</h3>
-                                                <ul>
-                                                   
-                                                </ul>
+                                                 <ul>
+                                                    <?php 
+                                                       
+                                                       foreach ($inclutions as $inc) {
+                                                        ?>
+                                                    <li><?php echo $inc->name; ?></li>
+                                                    <?php
+                                                       }
+                                                       
+                                                       ?>
+                                                 </ul>
                                              </div>
+                                             <?php 
+                                             endif;
+                                             if(!empty($exclusions)): ?>
                                              <div class="exc">
                                                 <h3>Exclusions</h3>
                                                 <ul>
-                                                   
-                                                </ul>
+                                                    <?php
+                                                       
+                                                         foreach ($exclusions as $exc) {
+                                                          ?>
+                                                    <li><?php echo $exc->name; ?></li>
+                                                    <?php
+                                                       }
+                                                       
+                                                        ?>
+                                                 </ul>
                                              </div>
+                                           <?php endif; ?>
                                           </div>
                                        </div>
       		            				   <span class="readmore-btn" id="<?php echo $post->ID ?>">Read More</span>
