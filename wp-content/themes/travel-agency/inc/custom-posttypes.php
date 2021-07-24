@@ -82,8 +82,12 @@ function package_register() {
         'capability_type' => 'post', 
         'hierarchical' => true,
         'has_archive' => true,  
-        'menu_position' => null, 
-        'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',) 
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',) ,
+        
     );   
 
     register_post_type( 'packages' , $args ); 

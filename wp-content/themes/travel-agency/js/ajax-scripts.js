@@ -2,11 +2,22 @@ jQuery(function(){
     var cat;
     var postData = {};
     const urlParams = new URLSearchParams(window.location.search);
-    cat = urlParams.get('cat');
+    cat = urlParams.get('pcat');
+    state = urlParams.get('state');
 
     if(!cat)
     {
         cat = 0;
+        updateFilter();
+    }
+    else
+    {
+        updateFilter();
+    }
+
+    if(!state)
+    {
+        state = 0;
         updateFilter();
     }
     else
@@ -22,6 +33,15 @@ jQuery(function(){
         cat = jQuery(this).attr("catid");
         updateFilter();
         updateURL();
+        location.reload(); 
+    });
+
+    jQuery(".state-filter").click(function(e){
+        e.preventDefault();
+        state = jQuery(this).attr("catid");
+        updateFilter();
+        updateURL();
+        // alert(state);
         location.reload(); 
     })
 
@@ -47,7 +67,11 @@ jQuery(function(){
             }
         }
         theURL= new URL(current_url);
-        theURL.searchParams.set('cat',cat);
+        
+        theURL.searchParams.set('pcat',cat);
+        
+        theURL.searchParams.set('state',state);
+        
         window.history.pushState("", "", theURL);
         
     }
@@ -55,7 +79,9 @@ jQuery(function(){
     function updateFilter()
     {
         jQuery('.cat-filter').removeClass("active");
-        jQuery('.tabs__control').find('[catid='+cat+']').addClass('active');
+        jQuery('.state-filter').removeClass("active");
+        jQuery('.parent-list').find('[catid='+state+']').addClass('active');
+        jQuery('.child-list').find('[catid='+cat+']').addClass('active');
     }
 
     

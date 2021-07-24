@@ -50,10 +50,10 @@ if( ! function_exists( 'travel_agency_header' ) ) :
  * Header Start
 */
 function travel_agency_header(){     
-    $phone       = get_theme_mod( 'phone', __( '(888) 123-45678', 'travel-agency' ) );
-    $phone_label = get_theme_mod( 'phone_label', __( 'Call us, we are open 24/7', 'travel-agency' ) );
-    $ed_social   = get_theme_mod( 'ed_social_links', true );
-    $ed_search   = get_theme_mod( 'ed_search', true ); 
+    $phone       = get_field('header_right_phone', 'theme_options');
+    $phone_label = get_field('header_right_text', 'theme_options');
+    // $ed_social   = get_theme_mod( 'ed_social_links', true );
+    // $ed_search   = get_theme_mod( 'ed_search', true ); 
     ?>
     <header id="masthead" class="site-header" itemscope itemtype="https://schema.org/WPHeader">
 		
@@ -94,8 +94,8 @@ function travel_agency_header(){
                     <?php if( $phone_label || $phone ){ ?>
                     <div class="right">
                         <?php
-    						if( $phone_label ) echo '<span class="phone-label">' . esc_html( travel_agency_get_phone_label() ) . '</span>';
-                            if( $phone ) echo '<a href="' . esc_url( 'tel:' . preg_replace( '/[^\d+]/', '', $phone ) ) . '" class="tel-link"><span class="phone">' . esc_html( travel_agency_get_header_phone() ) . '</span></a>';
+    						if( $phone_label ) echo '<span class="phone-label">' . $phone_label . '</span>';
+                            if( $phone ) echo '<a href="tel:' . $phone . '" class="tel-link"><span class="phone">' . $phone . '</span></a>';
                         ?>
                     </div>
                     <?php } ?>

@@ -3,32 +3,91 @@
  /* Template Name:  Offer Packages */ 
 get_header(); 
 
-if(isset($_GET['cat']))
-$cat_id = $_GET['cat'];
+if(isset($_GET['state']))
+$state_id = $_GET['state'];
+
+if(isset($_GET['pcat']))
+$cat_id = $_GET['pcat'];
 ?>
 <section class="our-deals" id="deal_section">
    <div class="tabs">
       <div class="container">
-         <div role="tablist" class="tabs__control">
-            <button  class="tabs__tab cat-filter" catid = "0" >All</button>
-            <?php
-               $cats = get_terms( array(
+        <?php 
+        $cats = get_terms( array(
                  'taxonomy' => 'packagescategories',
                  'hide_empty' => false,
                ) );
-                 $i = 1;
-                 foreach($cats as $cat) {
+        $parent_list = array();
+        $child_list = array();
+        foreach($cats as $cat) {
+            $item = array(
+                    'term_id' => $cat->term_id,
+                    'name' => $cat->name
+                );
+            if($cat->parent == 0)
+                array_push($parent_list, $item);
+            else
+            {
+                if($state_id != 0)
+                {
+                    if($cat->parent == $state_id)
+                        array_push($child_list, $item);
+                }
+                else
+                array_push($child_list, $item);
+            }
+        }
+
+
+        if(sizeof($parent_list) > 0){
+        ?>
+        <div class="filter-wrap state-filter-wrap">
+            <h3>Filter by state</h3>
+         <div role="tablist" class="tabs__control parent-list">
+            <button  class="tabs__tab state-filter" catid = "0" >All</button>
+            <?php
+                 foreach($parent_list as $cat) {
                ?>
-            <button class="tabs__tab cat-filter" catid = "<?php echo $cat->term_id; ?>"><?php echo $cat->name; ?></button>
-            <?php 
-               $i++; 
+            <button class="tabs__tab state-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
+            <?php  
                 } 
                ?>
          </div>
+         </div>
+        <?php } ?>
+
+        <?php
+        if(sizeof($child_list) > 0 && $state_id != 0){
+        ?>
+        <div class="filter-wrap category-filter-wrap">
+            <h3>Filter by category</h3>
+         <div role="tablist" class="tabs__control child-list">
+            <button  class="tabs__tab cat-filter" catid = "0" >All</button>
+            <?php
+                 foreach($child_list as $cat) {
+               ?>
+            <button class="tabs__tab cat-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
+            <?php  
+                } 
+               ?>
+         </div>
+        </div>
+        <?php } ?>
       </div>
       <div class="container tabed-content">
       <div class="grid grid-latest" >
                      <?php
+
+                     $cat_list = array();
+
+                     if($cat_id && $cat_id !=0)
+                        array_push($cat_list, intval($cat_id));
+
+                    if($state_id && $state_id !=0)
+                        array_push($cat_list, intval($state_id));
+
+                      // var_dump($cat_list);
+
                      $args = array(
                         'post_type' => 'packages',
                         'posts_per_page' => -1 ,
@@ -36,11 +95,11 @@ $cat_id = $_GET['cat'];
                         'orderby' => 'ID'
                         );
 
-                     if($cat_id)
+                     if($cat_id || $state_id)
                      $args['tax_query'] = array(
                           array(
                               'taxonomy' => 'packagescategories',
-                              'terms' => $cat_id,
+                              'terms' => $cat_list,
                               'field' => 'term_id',
                           )
                         );
@@ -72,15 +131,25 @@ $cat_id = $_GET['cat'];
                            <div class="text-holder">
                               <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                               <div class="category-trip-detail-wrap">
+                                 <div class="amenities">
+                                      <ul>
+                                          <li><i class="fas fa-camera"></i></li>
+                                          <li><i class="fas fa-car-side"></i></li>
+                                          <li><i class="fas fa-bed"></i></li>
+                                          <li><i class="fas fa-utensils"></i></li>
+                                      </ul>
+                                  </div>
                                  <div class="category-trip-desti">
-                                    <span class="category-trip-loc">
-                                       <i>
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="11.213" height="15.81" viewBox="0 0 11.213 15.81">
-                                             <path id="Path_23393" data-name="Path 23393" d="M5.607,223.81c1.924-2.5,5.607-7.787,5.607-10.2a5.607,5.607,0,0,0-11.213,0C0,216.025,3.682,221.31,5.607,223.81Zm0-13.318a2.492,2.492,0,1,1-2.492,2.492A2.492,2.492,0,0,1,5.607,210.492Zm0,0" transform="translate(0 -208)" opacity="0.8"></path>
-                                          </svg>
-                                       </i>
-                                       <span><?php echo $places_covered; ?></span>
-                                    </span><br>
+                                       <?php if(!empty($places_covered)): ?>
+                        <span class="category-trip-loc">
+                           <i>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="11.213" height="15.81" viewBox="0 0 11.213 15.81">
+                                 <path id="Path_23393" data-name="Path 23393" d="M5.607,223.81c1.924-2.5,5.607-7.787,5.607-10.2a5.607,5.607,0,0,0-11.213,0C0,216.025,3.682,221.31,5.607,223.81Zm0-13.318a2.492,2.492,0,1,1-2.492,2.492A2.492,2.492,0,0,1,5.607,210.492Zm0,0" transform="translate(0 -208)" opacity="0.8"></path>
+                              </svg>
+                           </i>
+                           <span><?php echo $places_covered; ?></span>
+                        </span><br>
+                        <?php endif; ?>
                                     <div class="meta-info">
                                        <span class="time">
                                           <i>

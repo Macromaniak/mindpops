@@ -53,6 +53,7 @@ $cat_id = $_GET['cat'];
                           $package_discounted_price = get_field('package_discounted_price');
                           $package_discount_percentage = get_field('package_discount_percentage');
                           $package_location = get_field('package_location');
+                          $places_covered = get_field('places_covered', $package);
                           $number_of_days = get_field('number_of_days');
                           $number_of_nights = get_field('number_of_nights');
                           ?> 
@@ -67,15 +68,25 @@ $cat_id = $_GET['cat'];
                            <div class="text-holder">
                               <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                               <div class="category-trip-detail-wrap">
+                                 <div class="amenities">
+                                      <ul>
+                                          <li><i class="fas fa-camera"></i></li>
+                                          <li><i class="fas fa-car-side"></i></li>
+                                          <li><i class="fas fa-bed"></i></li>
+                                          <li><i class="fas fa-utensils"></i></li>
+                                      </ul>
+                                  </div>
                                  <div class="category-trip-desti">
-                                    <span class="category-trip-loc">
-                                       <i>
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="11.213" height="15.81" viewBox="0 0 11.213 15.81">
-                                             <path id="Path_23393" data-name="Path 23393" d="M5.607,223.81c1.924-2.5,5.607-7.787,5.607-10.2a5.607,5.607,0,0,0-11.213,0C0,216.025,3.682,221.31,5.607,223.81Zm0-13.318a2.492,2.492,0,1,1-2.492,2.492A2.492,2.492,0,0,1,5.607,210.492Zm0,0" transform="translate(0 -208)" opacity="0.8"></path>
-                                          </svg>
-                                       </i>
-                                       <span><?php echo $package_location; ?></span>
-                                    </span>
+                                       <?php if(!empty($places_covered)): ?>
+                        <span class="category-trip-loc">
+                           <i>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="11.213" height="15.81" viewBox="0 0 11.213 15.81">
+                                 <path id="Path_23393" data-name="Path 23393" d="M5.607,223.81c1.924-2.5,5.607-7.787,5.607-10.2a5.607,5.607,0,0,0-11.213,0C0,216.025,3.682,221.31,5.607,223.81Zm0-13.318a2.492,2.492,0,1,1-2.492,2.492A2.492,2.492,0,0,1,5.607,210.492Zm0,0" transform="translate(0 -208)" opacity="0.8"></path>
+                              </svg>
+                           </i>
+                           <span><?php echo $places_covered; ?></span>
+                        </span><br>
+                        <?php endif; ?>
                                     <div class="meta-info">
                                        <span class="time">
                                           <i>
@@ -92,7 +103,8 @@ $cat_id = $_GET['cat'];
                                  </div>
                               </div>
                               <div class="btn-holder">
-                                 <a href="<?php the_permalink(); ?>" class="btn-more">Book Now</a>
+                                 <a href="#" class="btn-more popmake-133">Book Now</a>
+                                 <a href="<?php echo get_the_permalink($package); ?>" class="btn-more">View Details</a>
                               </div>
                            </div>
                         </div>

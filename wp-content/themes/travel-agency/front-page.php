@@ -177,6 +177,9 @@ $packages_block_description = get_field('packages_block_description');
     <div class="btn-holder deal-btn-holder"><a href="<?php echo site_url(); ?>/all-packages/" class="btn-more deal-btn-more">View All Deals</a></div>
     </div>
 </section>
+
+<?php get_template_part('template-parts/homepage-slider'); ?>
+
 <section class="testimoinal" id="testimonial_section">
   <div class="container">
     <header class="section-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; 
