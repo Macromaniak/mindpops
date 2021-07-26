@@ -979,7 +979,7 @@ a:active {
     padding: 0 30px;
 }
 .our-deals .grid .text-holder .title a {
-    color: #111;
+    color: #FFCF79;
     -webkit-transition: linear .2s;
     -moz-transition: linear .2s;
     transition: linear .2s;
@@ -8249,6 +8249,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     border: 1px solid #c1c1c1;
     border-radius: 5px;
     height: 45px;
+    background-color: #fff;
 }
 .form-col{
     background: #f6f6f6;
@@ -8260,6 +8261,10 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .common-contact .grid{
     display: flex;
+}
+.single-packages .common-contact .grid{
+    display: inline-block;
+    width: 100%;
 }
 .common-contact .col-6{
     width: 50%;
@@ -8295,12 +8300,13 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     text-decoration: none; 
 }
 .package-left{
-    background: #f6f6f6;
+    /*background: #f6f6f6;*/
+    background: #FCF6F5FF;
     padding: 20px;
 }
 .package-left li{
     font-size: 16px;
-    line-height: 40px;
+    line-height: 34px;
     font-weight: 500;
 }
 .package-left .subtxt{
@@ -8338,6 +8344,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     border-radius: 5px;
     height: 45px;
+    background-color: #fff;
 }
 .popmake-content form p{
     margin-bottom: 0;
@@ -8372,9 +8379,11 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .popmake-content input.wpcf7-submit{
     color: #fff;
-    background: #0d0d75db;
-    border: 2px solid #0d0d75db;
+   /* background: #0d0d75db;
+    border: 2px solid #0d0d75db;*/
     border-radius: 70px;
+    background: #ac73e4;
+    border: 2px solid #ac73e4;
 }
 .popmake-content input.wpcf7-submit:hover{
     border: 2px solid #0d0d75db;
@@ -8402,6 +8411,21 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     font-weight: 500;
     font-size: 16px;
 }
+.buttons_single-package{
+    position: absolute;
+    bottom: 20px;
+    display: inline-block;
+    width: 100%;
+
+}
+.btn-call{
+    background: transparent !important;
+    color: #0d0d75db !important;
+}
+.btn-call:hover{
+    background: #0d0d75db !important;
+    color: #fff !important;
+}
 .package-single-row .btn-more{
     background: #0d0d75db;
     color: #fff;
@@ -8413,20 +8437,19 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     -moz-transition: linear .2s;
     transition: linear .2s;
     border: 2px solid #0d0d75db;
-    position: absolute;
-    bottom: 20px;
     display: inline-block;
     font-size: 13px;
     line-height: 26px;
     font-weight: 600;
     text-align: center;
+    transition: 1s;
 }
 .package-single-row .btn-more:hover{
     background: transparent;
     color: #0d0d75db;
 }
 .itinerary-count{
-    background: #0d0d75db;
+    background: #c11dcc;
     color: #fff;
     padding: 10px 50px;
     text-align: center;
@@ -8437,7 +8460,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .Itinerary-title-box{
     width: 100%;
     /* padding-bottom: 8px; */
-    border-bottom: 1px solid #0d0d75db;
+    border-bottom: 1px solid #c11dcc;
     /* margin-bottom: 30px; */
     background: #bdbcbc21;
     height: 49px;
@@ -8459,7 +8482,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
   top: 50%;
   border: 15px solid transparent;
   border-right: 0;
-  border-left: 15px solid #0d0d75db;
+  border-left: 15px solid #c11dcc;
   transform: translate(calc(100% + 0px), -50%);  
 }
 .grid-left-right{
@@ -8467,14 +8490,14 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     margin: 0 0 50px;
     padding: 30px 0px;
     background: #fff;
-    border: 1px solid #0d0d75db;
+    border: 1px solid #c11dcc;
     border-top: 0;
 }   
 .grid-left-right p{
     margin-bottom: 0;
 }
 .night-stay{
-    color: #0d0d75db;
+    color: #c11dcc;
     font-size: 1.17em;
     font-weight: bold;
     padding-top: 15px;
@@ -8575,6 +8598,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     border-radius: 5px;
     margin-bottom: 10px;
     font-size: 15px;
+    background-color: #fff;
 }
 .category-trip-detail-wrap .amenities ul li{
     display: inline-block;
@@ -8642,7 +8666,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
   right: 54px;
   width: 35px;
   height: 35px;
-  background-image: url("/wp-content/uploads/2021/07/right-arrow.png");
+  background-image: url("http://localhost/mindpops/wp-content/uploads/2021/07/right-arrow.png");
   background-size: contain;
     background-position-x: right;
     background-repeat: no-repeat;
@@ -8656,7 +8680,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
   z-index: 1;
    width: 35px;
   height: 35px;
-  background-image: url("/wp-content/uploads/2021/07/left-arrow.png");
+  background-image: url("http://localhost/mindpops/wp-content/uploads/2021/07/left-arrow.png");
    background-size: contain;
     background-position-x: right;
     background-repeat: no-repeat;
@@ -8676,6 +8700,18 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .homeslider_section{
     margin: 20px 0px;
 }
+.buttons_single-package .fa-whatsapp{
+    font-size: 50px;
+    margin-left: 10px;
+    margin-top: 14px;
+    height: 30px;
+}
+.pum-theme-126 .pum-container, 
+.pum-theme-lightbox .pum-container{
+    background-color: #FFCF79 !important;
+}
+
+
 /*My code end*/
 @media only screen and (min-width: 1024px){
 .pum-container.pum-responsive.pum-responsive-medium {
@@ -8689,6 +8725,10 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .our-deals .grid .img-holder img{
     min-height: auto;
     height: auto;
+}
+.buttons_single-package{
+    position: relative;
+    padding-left: 15px;
 }
 }
 @media only screen and (max-width: 991px) {
