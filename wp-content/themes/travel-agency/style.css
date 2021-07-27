@@ -8300,8 +8300,8 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     text-decoration: none; 
 }
 .package-left{
-    /*background: #f6f6f6;*/
-    background: #FCF6F5FF;
+    background: #f6f6f6;
+   /* background: #FCF6F5FF;*/
     padding: 20px;
 }
 .package-left li{
@@ -8449,7 +8449,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     color: #0d0d75db;
 }
 .itinerary-count{
-    background: #c11dcc;
+    background: #7412f5cc;
     color: #fff;
     padding: 10px 50px;
     text-align: center;
@@ -8460,7 +8460,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .Itinerary-title-box{
     width: 100%;
     /* padding-bottom: 8px; */
-    border-bottom: 1px solid #c11dcc;
+    border-bottom: 1px solid #7412f5cc;
     /* margin-bottom: 30px; */
     background: #bdbcbc21;
     height: 49px;
@@ -8482,7 +8482,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
   top: 50%;
   border: 15px solid transparent;
   border-right: 0;
-  border-left: 15px solid #c11dcc;
+  border-left: 15px solid #7412f5cc;
   transform: translate(calc(100% + 0px), -50%);  
 }
 .grid-left-right{
@@ -8497,7 +8497,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     margin-bottom: 0;
 }
 .night-stay{
-    color: #c11dcc;
+    color: #7412f5cc;
     font-size: 1.17em;
     font-weight: bold;
     padding-top: 15px;

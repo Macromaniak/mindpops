@@ -77,10 +77,11 @@
                     $package_discount_percentage = get_field('package_discount_percentage');
                     $package_location = get_field('package_location');
                     $number_of_days = get_field('number_of_days');
+                    $state = get_field('state');
                     $number_of_nights = get_field('number_of_nights');
                   ?>
                <h2>
-                  <span><?php if(!empty($package_discounted_price)){ ?><strike><?php echo 'INR '. $package_original_price; ?></strike> <?php echo 'INR '. $package_discounted_price; } else { echo 'INR '. $package_original_price; } ?>/-<span class="onwards">(Onwards per couple)</span></span></span><span class="discount-holder"><?php if(!empty($package_discount_percentage)){ ?><span><?php echo $package_discount_percentage; ?>%</span><?php }?></span>
+                  <span><?php if(!empty($package_discounted_price)){ ?><strike><?php echo 'INR '. $package_original_price; ?></strike> <?php echo 'INR '. $package_discounted_price; } else { echo 'INR '. $package_original_price; } ?>/-<span class="onwards">(Onwards per couple)</span></span></span><span class="discount-holder"></span>
                </h2>
                <ul>
                   <li><?php echo $number_of_days; ?> Days - <?php echo $number_of_nights; ?> Nights</li>
@@ -89,15 +90,29 @@
                			$cats = get_the_terms($post->ID,'packagescategories');
                  
                  		foreach($cats as $cat) {
-                 			echo $cat->name;
+                 			echo $cat->name.', ';
                  		}
                			?>
                   </span></li>
+                  <?php if(!empty($state)){ ?>
+                  <li>State: <span class="subtxt"><?php echo $state; ?></span></li>
+                  <?php } 
+                  if(!empty(get_field('places_covered'))){
+                  ?>
                   <li>Place Covered:<span class="subtxt"><?php the_field('places_covered'); ?></span></li>
+                  <?php } 
+                  if(!empty(get_field('note'))){
+                  ?>
                   <li>Note:<span class="subtxt"><?php the_field('note'); ?></span></li>
+                  <?php } ?>
                   <li><a href="<?php echo get_site_url(); ?>/terms-and-conditions/">Terms and Conditions</a>
                </ul>
-               <a href="" class="btn-more">Book Now</a>
+               <div class="row buttons buttons_single-package">
+                  <a href="" class="btn-more popmake-133 pum-trigger">Book Now</a>
+                  <a href="tel:<?php echo get_field('header_right_phone', 'theme_options'); ?>" class="btn-more btn-call">Call Now</a>
+
+                  <a href="https://api.whatsapp.com/send?phone=<?php echo get_field('header_right_phone', 'theme_options'); ?>" target="_blank"><i class="fa fa-whatsapp"></i></a>
+               </div>
             </div>
          </div>
       </div>

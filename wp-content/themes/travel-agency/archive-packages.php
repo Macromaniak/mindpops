@@ -8,7 +8,11 @@ $state_id = $_GET['state'];
 
 if(isset($_GET['pcat']))
 $cat_id = $_GET['pcat'];
+
+if($state_id == 0)
+    $cat_id = 0;
 ?>
+<?php get_template_part('template-parts/package-banner'); ?>
 <section class="our-deals" id="deal_section">
    <div class="tabs">
       <div class="container">
@@ -37,6 +41,7 @@ $cat_id = $_GET['pcat'];
                 array_push($child_list, $item);
             }
         }
+
 
 
         if(sizeof($parent_list) > 0){

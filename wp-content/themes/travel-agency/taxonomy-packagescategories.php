@@ -6,6 +6,7 @@ get_header();
 if(isset($_GET['pcat']))
 $cat_id = $_GET['pcat'];
 ?>
+<?php get_template_part('template-parts/package-banner'); ?>
 <section class="our-deals" id="deal_section">
    <div class="tabs">
     <?php
