@@ -41,4 +41,17 @@
      * 
      * @hooked travel_agency_header - 20     
     */
-    do_action( 'travel_agency_header' );
+    do_action( 'travel_agency_header' ); ?>
+<div class="float-sm">
+    <ul id="social_side_links">
+        <li> 
+            <a href="tel:<?php echo get_field('header_right_phone', 'theme_options'); ?>" ><i class="fa fa-phone"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://api.whatsapp.com/send?phone=<?php echo get_field('header_right_phone', 'theme_options'); ?>" target="_blank"><i class="fa fa-whatsapp"></i></a>
+        </li>
+       
+    </ul>
+</div>
+

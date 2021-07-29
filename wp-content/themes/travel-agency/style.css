@@ -979,7 +979,7 @@ a:active {
     padding: 0 30px;
 }
 .our-deals .grid .text-holder .title a {
-    color: #FFCF79;
+    color: #000;
     -webkit-transition: linear .2s;
     -moz-transition: linear .2s;
     transition: linear .2s;
@@ -8244,7 +8244,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .contact-left select
 {
     width: 90%;
-    color: #111;
+    color: #666;
     margin-bottom: 20px;
     border: 1px solid #c1c1c1;
     border-radius: 5px;
@@ -8253,11 +8253,20 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .form-col{
     background: #f6f6f6;
-    padding-top: 60px !important;
+    padding-top: 75px !important;
+    box-shadow: 0 20px 38px rgb(0 0 0 / 15%);
 }
-.wpcf7-submit{
+.form-col .wpcf7-submit{
     width: 30% !important;
     margin-top: 15px;
+    border: 2px solid #32b67a;
+    border-radius: 5px;
+    background: transparent;
+    transition: 1s;
+}
+.form-col .wpcf7-submit:hover{
+    background: #32b67a;
+    color: #fff;
 }
 .common-contact .grid{
     display: flex;
@@ -8300,9 +8309,17 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     text-decoration: none; 
 }
 .package-left{
-    background: #f6f6f6;
+    background: #eeeeee;
    /* background: #FCF6F5FF;*/
     padding: 20px;
+}
+.package-left h2, .package-left ul li
+{
+    color: #000;
+}
+.cnt-destination h3
+{
+    color: #000;
 }
 .package-left li{
     font-size: 16px;
@@ -8338,13 +8355,15 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .popmake-content form-select, 
 .popmake-content select{
     width: 90%;
-    color: #111;
+    color: #666;
     margin-bottom: 20px;
     border: 1px solid #c1c1c1;
-    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    /*font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;*/
     border-radius: 5px;
     height: 45px;
     background-color: #fff;
+    font-size: 15px;
+    font-weight: 400;
 }
 .popmake-content form p{
     margin-bottom: 0;
@@ -8363,18 +8382,18 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .popmake-content input::placeholder,
 .popmake-content textarea::placeholder{
-     color: #111 !important;
+     color: #666 !important;
 }
 
 .pum-theme-126 .pum-title, .pum-theme-lightbox .pum-title{
-    font-family: Montserrat,sans-serif !important;
+    /*font-family: Montserrat,sans-serif !important;*/
     font-size: 36px !important;
     font-weight: 500 !important;
     line-height: 1.25em !important;
     margin: 0 0 16px !important;
     padding-bottom: 10px !important;
     position: relative !important;
-    color: #111 !important;
+    color: #0d0d75db !important;
     text-align: center !important;
 }
 .popmake-content input.wpcf7-submit{
@@ -8382,8 +8401,9 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
    /* background: #0d0d75db;
     border: 2px solid #0d0d75db;*/
     border-radius: 70px;
-    background: #ac73e4;
-    border: 2px solid #ac73e4;
+    background: #0d0d75db;
+    border: 2px solid #0d0d75db;
+    width: 30%;
 }
 .popmake-content input.wpcf7-submit:hover{
     border: 2px solid #0d0d75db;
@@ -8405,7 +8425,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .package-single-row .package-left{
     min-height: 457px;
     position: relative;
-    border: 1px solid #32b67a
+    /*border: 1px solid #000*/
 }
 .onwards{
     font-weight: 500;
@@ -8420,14 +8440,14 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .btn-call{
     background: transparent !important;
-    color: #0d0d75db !important;
+    color: #32b67a !important;
 }
 .btn-call:hover{
-    background: #0d0d75db !important;
+    background: #32b67a !important;
     color: #fff !important;
 }
 .package-single-row .btn-more{
-    background: #0d0d75db;
+    background: #32b67a;
     color: #fff;
     padding: 5px 25px;
     border-radius: 20px;
@@ -8436,7 +8456,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     -webkit-transition: linear .2s;
     -moz-transition: linear .2s;
     transition: linear .2s;
-    border: 2px solid #0d0d75db;
+    border: 2px solid #32b67a;
     display: inline-block;
     font-size: 13px;
     line-height: 26px;
@@ -8446,10 +8466,10 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .package-single-row .btn-more:hover{
     background: transparent;
-    color: #0d0d75db;
+    color: #32b67a;
 }
 .itinerary-count{
-    background: #7412f5cc;
+    background: #32b67a;
     color: #fff;
     padding: 10px 50px;
     text-align: center;
@@ -8460,7 +8480,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .Itinerary-title-box{
     width: 100%;
     /* padding-bottom: 8px; */
-    border-bottom: 1px solid #7412f5cc;
+    border-bottom: 1px solid #32b67a;
     /* margin-bottom: 30px; */
     background: #bdbcbc21;
     height: 49px;
@@ -8482,7 +8502,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
   top: 50%;
   border: 15px solid transparent;
   border-right: 0;
-  border-left: 15px solid #7412f5cc;
+  border-left: 15px solid #32b67a;
   transform: translate(calc(100% + 0px), -50%);  
 }
 .grid-left-right{
@@ -8490,14 +8510,14 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     margin: 0 0 50px;
     padding: 30px 0px;
     background: #fff;
-    border: 1px solid #c11dcc;
+    border: 1px solid #32b67a;
     border-top: 0;
 }   
 .grid-left-right p{
     margin-bottom: 0;
 }
 .night-stay{
-    color: #7412f5cc;
+    color: #32b67a;
     font-size: 1.17em;
     font-weight: bold;
     padding-top: 15px;
@@ -8708,9 +8728,36 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .pum-theme-126 .pum-container, 
 .pum-theme-lightbox .pum-container{
-    background-color: #FFCF79 !important;
+    background-color: #fff !important;
 }
-
+.buttons_single-package
+{
+    margin-left: 0px!important;
+}
+.float-sm{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 99;
+}
+#social_side_links{
+    list-style: none;
+}
+#social_side_links li{
+    padding: 10px;
+    background: #fff;
+}
+#social_side_links li:hover #social_side_links li a svg,
+#social_side_links li:hover,
+#social_side_links li a:hover{
+    color: #000 !important;
+    
+}
+#social_side_links li a svg{
+    font-size: 30px;
+}
 
 /*My code end*/
 @media only screen and (min-width: 1024px){
@@ -8733,7 +8780,48 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 @media only screen and (max-width: 991px) {
 .popup-box-form-submit{
-    display: none;
+    /*display: none;*/
+}
+.pop-icon{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.pop-icon svg{
+    font-size: 30px;
+}
+.popup-box-form-submit{
+    bottom: 20px;
+    right: 0;
+    z-index: 99999999999999999;
+    height: auto;
+    float: right;
+    width: 100%;
+    max-width: 100%;
+}
+.popup-box {
+    width: 65%;
+    margin: 0 auto;
+    display: block;
+    padding-top: 100px;
+    margin-bottom: 0px;
+    background: #fff;
+    box-shadow: 0 20px 38px rgb(0 0 0 / 15%);
+    border: 1px solid #0d0d75db;
+    border-radius: 10px;
+    margin-right: 0;
+    height: 1060px;
+}
+.popup-box-form-submit .grid-form input, 
+.popup-box-form-submit .grid-form select {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 22px;
+    background-color: #fff;
 }
 .common-contact .col-6 {
     width: 100%;

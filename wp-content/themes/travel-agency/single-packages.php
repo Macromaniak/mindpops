@@ -90,6 +90,7 @@
                			$cats = get_the_terms($post->ID,'packagescategories');
                  
                  		foreach($cats as $cat) {
+                 		    if($cat->parent !=0)
                  			echo $cat->name.', ';
                  		}
                			?>
@@ -147,33 +148,33 @@
                               <span class="itinerary-count">Day <?php echo $i; ?></span>
                               <span class="itinerary-title"><?php echo $itinerary_title; ?></span>
                            </div>
-                           <?php if($i % 2 == 0){ ?>
+                           
+                           <!--<div class="grid flex-row-reverse grid-second grid-left-right">-->
+                           <!--   <div class="col-8">-->
+                           <!--      <div class="cnt-destination">-->
+                           <!--         <h3><?php// echo $title_itinerary; ?></h3>-->
+                           <!--         <p><?php //echo $destination['content']; ?></p>-->
+                           <!--         <div class="night-stay">-->
+                           <!--            <?php// $title_parts = explode(':', $title_itinerary);-->
+                           <!--               ?>-->
+                           <!--            <?php// if($i==sizeof($destinations)){ ?>-->
+                           <!--            <span>Tour concludes</span>-->
+                           <!--            <?php //} else{ ?>-->
+                           <!--            <i class="fas fa-bed" ></i>-->
+                           <!--            <span>Night Stay at</span>-->
+                           <!--            <span><?php// echo end($title_parts); ?></span>-->
+                           <!--            <?php// } ?>-->
+                           <!--         </div>-->
+                           <!--      </div>-->
+                           <!--   </div>-->
+                           <!--   <div class="col-4">-->
+                           <!--      <div class="img-destination">-->
+                           <!--         <img src="<?php// echo $destination['image']['url']; ?>">-->
+                           <!--      </div>-->
+                           <!--   </div>-->
+                           <!--</div>-->
+                          
                            <div class="grid flex-row-reverse grid-second grid-left-right">
-                              <div class="col-8">
-                                 <div class="cnt-destination">
-                                    <h3><?php echo $title_itinerary; ?></h3>
-                                    <p><?php echo $destination['content']; ?></p>
-                                    <div class="night-stay">
-                                       <?php $title_parts = explode(':', $title_itinerary);
-                                          ?>
-                                       <?php if($i==sizeof($destinations)){ ?>
-                                       <span>Tour concludes</span>
-                                       <?php } else{ ?>
-                                       <i class="fas fa-bed" ></i>
-                                       <span>Night Stay at</span>
-                                       <span><?php echo end($title_parts); ?></span>
-                                       <?php } ?>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-4">
-                                 <div class="img-destination">
-                                    <img src="<?php echo $destination['image']['url']; ?>">
-                                 </div>
-                              </div>
-                           </div>
-                           <?php } else {?> 
-                           <div class="grid flex-row-reverse grid-first grid-left-right">
                               <div class="col-4">
                                  <div class="img-destination">
                                     <img src="<?php echo $destination['image']['url']; ?>">
@@ -197,7 +198,7 @@
                                  </div>
                               </div>
                            </div>
-                           <?php } ?>
+                         
                            <?php 
                               $i++;
                               }
