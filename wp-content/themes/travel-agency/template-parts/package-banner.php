@@ -14,6 +14,22 @@ if(is_archive('packages')){
  	$img = get_field('banner_image',$term_data);
  	$title = get_field('banner_title',$term_data);
  }
+  if(is_tax('package-type'))
+ {
+    $term = get_queried_object();
+    $term_id = $term->term_id;
+    $term_data = get_term($term_id, 'package-type');
+
+    $img = get_field('banner_image',$term_data);
+    $title = get_field('banner_title',$term_data);
+ }
+
+if(is_singular('destinations')){
+  // die('gg');
+  // global $post;
+ $img = get_field('banner_image');
+ $title = get_field('banner_title');
+}
  if(!empty($img['url'])){
 ?>
 <div class="banner">

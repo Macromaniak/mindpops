@@ -42,6 +42,21 @@ function travel_agency_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+     /** Image Sizes */
+    if (function_exists('add_image_size')){
+    add_image_size( 'travel-agency-full', 1290, 540, true );
+    add_image_size( 'travel-agency-popular', 630, 630, true );
+    add_image_size( 'travel-agency-popular-small', 300, 300, true );
+    add_image_size( 'travel-agency-blog', 410, 250, true );
+    add_image_size( 'travel-agency-related', 280, 170, true );
+    add_image_size( 'travel-agency-recent', 300, 170, true );
+    add_image_size( 'travel-agency-schema', 600, 60 );
+    add_image_size( 'grid-thumb', 79, 79, true );
+    add_image_size( 'profile-thumb', 125, 152, true );
+    add_image_size( 'investment-logo', 151, 98, true );
+    add_image_size( 'custom-size-cat', 393, 300, true );
+    }
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'travel-agency' ),
@@ -90,14 +105,7 @@ function travel_agency_setup() {
     	'header-text' => array( 'site-title', 'site-description' ),
     ) );
     
-    /** Image Sizes */
-    add_image_size( 'travel-agency-full', 1290, 540, true );
-    add_image_size( 'travel-agency-popular', 630, 630, true );
-    add_image_size( 'travel-agency-popular-small', 300, 300, true );
-    add_image_size( 'travel-agency-blog', 410, 250, true );
-    add_image_size( 'travel-agency-related', 280, 170, true );
-    add_image_size( 'travel-agency-recent', 300, 170, true );
-    add_image_size( 'travel-agency-schema', 600, 60 );
+
         
     /** Starter Content */
     $starter_content = array(
@@ -145,9 +153,9 @@ function travel_agency_setup() {
     }
 }
 endif;
-add_action( 'after_setup_theme', 'travel_agency_setup' );
+// add_action( 'after_setup_theme', 'travel_agency_setup' );
 
-if( ! function_exists( 'travel_agency_content_width' ) ) :
+// if( ! function_exists( 'travel_agency_content_width' ) ) :
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -155,29 +163,29 @@ if( ! function_exists( 'travel_agency_content_width' ) ) :
  *
  * @global int $content_width
  */
-function travel_agency_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'travel_agency_content_width', 910 );
-}
-endif;
-add_action( 'after_setup_theme', 'travel_agency_content_width', 0 );
+// function travel_agency_content_width() {
+// 	$GLOBALS['content_width'] = apply_filters( 'travel_agency_content_width', 910 );
+// }
+// endif;
+// add_action( 'after_setup_theme', 'travel_agency_content_width', 0 );
 
-if( ! function_exists( 'travel_agency_template_redirect_content_width' ) ) :
+// if( ! function_exists( 'travel_agency_template_redirect_content_width' ) ) :
 /**
  * Adjust content_width value according to template.
  *
  * @return void
 */
-function travel_agency_template_redirect_content_width(){
-	// Full Width in the absence of sidebar.
-	if( is_page() ){
-	   $sidebar_layout = travel_agency_sidebar_layout();
-       if( ( $sidebar_layout == 'no-sidebar' ) || ! is_active_sidebar( 'sidebar' ) ) $GLOBALS['content_width'] = 1290;        
-	}elseif ( ! ( is_active_sidebar( 'sidebar' ) ) ) {
-		$GLOBALS['content_width'] = 1290;
-	}
-}
-endif;
-add_action( 'template_redirect', 'travel_agency_template_redirect_content_width' );
+// function travel_agency_template_redirect_content_width(){
+// 	// Full Width in the absence of sidebar.
+// 	if( is_page() ){
+// 	   $sidebar_layout = travel_agency_sidebar_layout();
+//        if( ( $sidebar_layout == 'no-sidebar' ) || ! is_active_sidebar( 'sidebar' ) ) $GLOBALS['content_width'] = 1290;        
+// 	}elseif ( ! ( is_active_sidebar( 'sidebar' ) ) ) {
+// 		$GLOBALS['content_width'] = 1290;
+// 	}
+// }
+// endif;
+// add_action( 'template_redirect', 'travel_agency_template_redirect_content_width' );
 
 if( ! function_exists( 'travel_agency_scripts' ) ) :
 /**
@@ -188,15 +196,15 @@ function travel_agency_scripts() {
     $build  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
     $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
     
-    wp_enqueue_style( 'animate', get_template_directory_uri(). '/css' . $build . '/animate' . $suffix . '.css', array(), TRAVEL_AGENCY_THEME_VERSION );
+    wp_enqueue_style( 'animate', get_template_directory_uri(). '/css' . $build . '/animate' . $suffix . '.css', array(), 1.0 );
     wp_enqueue_style( 'travel-agency-google-fonts', travel_agency_fonts_url() );
-    wp_enqueue_style( 'travel-agency-style', get_stylesheet_uri(), array(), TRAVEL_AGENCY_THEME_VERSION );
+    wp_enqueue_style( 'travel-agency-style', get_stylesheet_uri(), array(), 1.0 );
 
-    wp_enqueue_script( 'wow', get_template_directory_uri() . '/js' . $build . '/wow' . $suffix . '.js', array( 'jquery' ), TRAVEL_AGENCY_THEME_VERSION, true );
-	wp_enqueue_script( 'travel-agency-modal-accessibility', get_template_directory_uri() . '/js' . $build . '/modal-accessibility' . $suffix . '.js', array( 'jquery' ), TRAVEL_AGENCY_THEME_VERSION, true );
+    wp_enqueue_script( 'wow', get_template_directory_uri() . '/js' . $build . '/wow' . $suffix . '.js', array( 'jquery' ), 1.0, true );
+	wp_enqueue_script( 'travel-agency-modal-accessibility', get_template_directory_uri() . '/js' . $build . '/modal-accessibility' . $suffix . '.js', array( 'jquery' ), 1.0, true );
     wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
     wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
-    wp_enqueue_script( 'travel-agency-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array( 'jquery' ), TRAVEL_AGENCY_THEME_VERSION, true );
+    wp_enqueue_script( 'travel-agency-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array( 'jquery' ), 1.0, true );
     
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -210,7 +218,7 @@ if( ! function_exists( 'travel_agency_admin_scripts' ) ) :
  * Enqueue admin scripts and styles.
 */
 function travel_agency_admin_scripts(){
-    wp_enqueue_style( 'travel-agency-admin', get_template_directory_uri() . '/inc/css/admin.css', '', TRAVEL_AGENCY_THEME_VERSION );
+    wp_enqueue_style( 'travel-agency-admin', get_template_directory_uri() . '/inc/css/admin.css', '', 1.0 );
 }
 endif; 
 add_action( 'admin_enqueue_scripts', 'travel_agency_admin_scripts' );

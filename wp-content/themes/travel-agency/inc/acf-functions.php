@@ -21,6 +21,41 @@ Class MindPopACFHandler {
 			// 				'post_id'     => 'causes_settings',
 			// 			) );
 		}
+
+		add_filter('acf/load_field/name=state_offer', array($this,'acf_load_select_field_choices'));
 	}
+
+	public function acf_load_select_field_choices()
+	{
+		 $field['choices'] = array();
+
+
+    // if has rows
+    if( have_rows('my_select_values', 'option') ) {
+        
+        // while has rows
+        while( have_rows('my_select_values', 'option') ) {
+            
+            // instantiate row
+            the_row();
+            
+            
+            // vars
+            $value = get_sub_field('value');
+            $label = get_sub_field('label');
+
+            
+            // append to choices
+            $field['choices'][ $value ] = $label;
+            
+        }
+        
+    }
+
+
+    // return the field
+    return $field;
+	}
+
 }
 new MindPopACFHandler();

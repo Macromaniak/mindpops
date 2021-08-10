@@ -16,19 +16,42 @@
       </div>
   	<?php } ?>
     </header>
-		<div class="homeslider">
-			<?php 
-			$destination_slider_block = get_field('destination_slider_block_slider');
-			foreach ($destination_slider_block as $slider) {
-			 ?>
-			<div class="slider-bx-s">
-				<img src="<?php echo $slider['image']['url'] ?>">
-				<div class="img-over-txt">
-					<h3><?php echo $slider['text']; ?></h3>
-				</div>
-			</div><!--slider-bx-s-->
-			<?php } ?>			
+    <div id="owl-carousel-home" class="owl-carousel owl-theme">
+    	<?php 
+        $cats = get_terms( array(
+                 'taxonomy' => 'packagescategories',
+                 'hide_empty' => false,
+               ) );
+        $parent_list = array();
+        
+        foreach($cats as $cat) {
+            $item = $cat;
+            if($cat->parent == 0)
+                array_push($parent_list, $item);
+        
+        }
+        // var_dump($parent_list);
+        foreach ($parent_list as $parent_lists) { 
+        	$cat_img = get_field('image', $parent_lists);?>
+        	<div class="item">
+        		<div class="slider-bx-s">
+        			<a href="<?php echo get_term_link($parent_lists->term_id); ?>">
+	    				<img src="<?php echo $cat_img['url'] ?>">
+	    				<div class="img-over-txt">
+	    					<h3><?php echo  $parent_lists->name; ?></h3>
+	    				</div>
+    				</a>
+    			</div>
+    		</div>
+        	
+        <?php }
 
-		</div>
+
+
+        
+        ?>
+    	
+    </div>
+	
 	</div><!--container-->
 </section>

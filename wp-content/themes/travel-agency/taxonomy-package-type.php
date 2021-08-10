@@ -1,114 +1,36 @@
 <?php 
-
-
-get_header(); 
-
-if(isset($_GET['state']))
-$state_id = $_GET['state'];
-
-if(isset($_GET['pcat']))
-$cat_id = $_GET['pcat'];
-
-if($state_id == 0)
-    $cat_id = 0;
-?>
+get_header(); ?>
 <?php get_template_part('template-parts/package-banner'); ?>
 <section class="our-deals" id="deal_section">
-   <div class="tabs">
-      <div class="container">
-        <?php 
-        $cats = get_terms( array(
-                 'taxonomy' => 'packagescategories',
-                 'hide_empty' => false,
-               ) );
-        $parent_list = array();
-        $child_list = array();
-        foreach($cats as $cat) {
-            $item = array(
-                    'term_id' => $cat->term_id,
-                    'name' => $cat->name
+  <?php
+    $term = get_queried_object();
+    $term_id = $term->term_id;
+    $term_data = get_term($term_id, 'package-type');?>
+	<div class="container">
+		<div class="grid grid-latest" >
+			<?php
+                $args = array(
+                    'post_type' => 'packages',
+                    'posts_per_page' => -1 ,
+                    'order' => 'DESC',
+                    'orderby' => 'ID'
                 );
-            if($cat->parent == 0)
-                array_push($parent_list, $item);
-            else
-            {
-                if($state_id != 0)
-                {
-                    if($cat->parent == $state_id)
-                        array_push($child_list, $item);
-                }
-                else
-                array_push($child_list, $item);
-            }
-        }
-
-
-
-        if(sizeof($parent_list) > 0){
-        ?>
-        <div class="filter-wrap state-filter-wrap">
-            <h3>Filter by state</h3>
-         <div role="tablist" class="tabs__control parent-list">
-            <button  class="tabs__tab state-filter" catid = "0" >All</button>
-            <?php
-                 foreach($parent_list as $cat) {
-               ?>
-            <button class="tabs__tab state-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
-            <?php  
-                } 
-               ?>
-         </div>
-         </div>
-        <?php } ?>
-
-        <?php
-        if(sizeof($child_list) > 0 && $state_id != 0){
-        ?>
-        <div class="filter-wrap category-filter-wrap">
-            <h3>Filter by category</h3>
-         <div role="tablist" class="tabs__control child-list">
-            <button  class="tabs__tab cat-filter" catid = "0" >All</button>
-            <?php
-                 foreach($child_list as $cat) {
-               ?>
-            <button class="tabs__tab cat-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
-            <?php  
-                } 
-               ?>
-         </div>
-        </div>
-        <?php } ?>
-      </div>
-      <div class="container tabed-content">
-      <div class="grid grid-latest" >
-                     <?php
-                     $cat_list = array();
-
-                     if($cat_id && $cat_id !=0)
-                        array_push($cat_list, intval($cat_id));
-
-                    if($state_id && $state_id !=0)
-                        array_push($cat_list, intval($state_id));
-
-                    // print_r($cat_list);
-
-                     $args = array(
-                        'post_type' => 'packages',
-                        'posts_per_page' => -1 ,
-                        'order' => 'DESC',
-                        'orderby' => 'ID'
-                        );
-
-                     if($cat_id || $state_id)
-                     $args['tax_query'] = array(
+                  if($cat_id && $child_list)
+                     {
+                      $child_list = array();
+                      array_push($child_list, $cat_id);
+                     }
+                     else
+                     {
+                      $child_list = $term_id;
+                     }
+                $args['tax_query'] = array(
                           array(
-                              'taxonomy' => 'packagescategories',
-                              'terms' => $cat_list,
+                              'taxonomy' => 'package-type',
+                              'terms' => $child_list,
                               'field' => 'term_id',
                           )
                         );
-
-                 // var_dump($args['tax_query']);
 
                         $packages = new WP_Query( $args ); 
                         if( $packages->have_posts() ): 
@@ -180,10 +102,7 @@ if($state_id == 0)
                             echo "<h2>No Packages Found!!!!!</h2>";
                         endif;
                           ?>
-      </div>
-      </div>
-   </div>
+		</div>
+	</div>
 </section>
-
-<?php get_footer();
-?>
+<?php get_footer(); ?>

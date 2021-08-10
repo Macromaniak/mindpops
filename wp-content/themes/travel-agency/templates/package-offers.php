@@ -211,7 +211,7 @@ $cat_id = $_GET['pcat'];
                               </div>
                               
                               <div class="btn-holder">
-                                 <a href="#" class="btn-more popmake-133">Book Now</a>
+                                 <a href="#" class="btn-more popmake-133">Enquire Now</a>
                               </div>
                            </div>
                         </div>

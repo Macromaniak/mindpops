@@ -59,9 +59,99 @@ tabs_items.forEach(function (tabs) {
     autoplaySpeed: 3000
   });
 
- 
+ jQuery('#owl-carousel').owlCarousel({
+    loop: true,
+    // dots: true,
+  margin: 10,
+  nav: true,
+  navText: [
+    "<i class='fa fa-caret-left'></i>",
+    "<i class='fa fa-caret-right'></i>"
+  ],
+  autoplay: true,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+  jQuery('#owl-carousel-home').owlCarousel({
+    loop: true,
+    //dots: false,
+  margin: 10,
+  nav: true,
+  navText: [
+    "<i class='fa fa-caret-left'></i>",
+    "<i class='fa fa-caret-right'></i>"
+  ],
+  autoplay: true,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
 
-
+jQuery('#owl-carousel-package').owlCarousel({
+    loop: true,
+    //dots: false,
+  margin: 10,
+  nav: true,
+  navText: [
+    "<i class='fa fa-caret-left'></i>",
+    "<i class='fa fa-caret-right'></i>"
+  ],
+  autoplay: true,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+jQuery('#owl-carousel-place').owlCarousel({
+    loop: true,
+    //dots: false,
+  margin: 10,
+  nav: true,
+  navText: [
+    "<i class='fa fa-caret-left'></i>",
+    "<i class='fa fa-caret-right'></i>"
+  ],
+  autoplay: true,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 1
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
   ///Read More
 jQuery(document).ready(function(){
   // jQuery('.popup-box').hide();
@@ -83,7 +173,28 @@ jQuery(document).ready(function(){
         }
     });
 
-     jQuery('.popup-box').show(500);
+    //Read more places to visit
+    jQuery('.read-text').click(function(event) {
+          // console.log(jQuery(this).prev('.more-ul')); 
+          var content = jQuery(this).prev('p').attr('content');
+          console.log(content); 
+          var trimmedString = content.substring(0, 60);
+          var ecxerpt = trimmedString+'...';
+          console.log(ecxerpt);
+          if( jQuery(this).text()=='Read more')
+          {
+            jQuery(this).text('Read less');
+            jQuery(this).prev('p').text(content);
+          }
+          else
+          {
+            jQuery(this).text('Read more');
+            jQuery(this).prev('p').text(ecxerpt);
+          }
+         
+    });
+
+     // jQuery('.popup-box').show(500);
       // Home slider
 
       

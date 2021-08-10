@@ -109,7 +109,7 @@
                   <li><a href="<?php echo get_site_url(); ?>/terms-and-conditions/">Terms and Conditions</a>
                </ul>
                <div class="row buttons buttons_single-package">
-                  <a href="" class="btn-more popmake-133 pum-trigger">Book Now</a>
+                  <a href="" class="btn-more popmake-133 pum-trigger">Enquire Now</a>
                   <a href="tel:<?php echo get_field('header_right_phone', 'theme_options'); ?>" class="btn-more btn-call">Call Now</a>
 
                   <a href="https://api.whatsapp.com/send?phone=<?php echo get_field('header_right_phone', 'theme_options'); ?>" target="_blank"><i class="fa fa-whatsapp"></i></a>

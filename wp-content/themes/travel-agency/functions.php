@@ -6,11 +6,11 @@
  *
  * @package Travel_Agency
  */
-$travel_agency_theme_data = wp_get_theme();
+// $travel_agency_theme_data = wp_get_theme();
 
-if( ! defined( 'TRAVEL_AGENCY_THEME_VERSION' ) ) define( 'TRAVEL_AGENCY_THEME_VERSION', $travel_agency_theme_data->get( 'Version' ) );
-if( ! defined( 'TRAVEL_AGENCY_THEME_NAME' ) ) define( 'TRAVEL_AGENCY_THEME_NAME', $travel_agency_theme_data->get( 'Name' ) );
-if( ! defined( 'TRAVEL_AGENCY_THEME_TEXTDOMAIN' ) ) define( 'TRAVEL_AGENCY_THEME_TEXTDOMAIN', $travel_agency_theme_data->get( 'TextDomain' ) );
+// if( ! defined( 'TRAVEL_AGENCY_THEME_VERSION' ) ) define( 'TRAVEL_AGENCY_THEME_VERSION', $travel_agency_theme_data->get( 'Version' ) );
+// if( ! defined( 'TRAVEL_AGENCY_THEME_NAME' ) ) define( 'TRAVEL_AGENCY_THEME_NAME', $travel_agency_theme_data->get( 'Name' ) );
+// if( ! defined( 'TRAVEL_AGENCY_THEME_TEXTDOMAIN' ) ) define( 'TRAVEL_AGENCY_THEME_TEXTDOMAIN', $travel_agency_theme_data->get( 'TextDomain' ) );
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -35,26 +35,26 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Widgets
  */
-require get_template_directory() . '/inc/widgets.php';
+// require get_template_directory() . '/inc/widgets.php';
 
 /**
  * Metabox
  */
-require get_template_directory() . '/inc/metabox.php';
+// require get_template_directory() . '/inc/metabox.php';
 /**
  * Getting Started
 */
-require get_template_directory() . '/inc/getting-started/getting-started.php';
+// require get_template_directory() . '/inc/getting-started/getting-started.php';
 
 /**
  * Plugin Recommendation
 */
-require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
+// require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 
 /**
  * Post Types

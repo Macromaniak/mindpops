@@ -20,7 +20,7 @@ $category_block_title = get_field('category_block_title');
 $category_block_description = get_field('category_block_description');
 ?>
 
-<section class="popular-destination" id="popular_section">
+<section class="popular-destination popular-destination-home" id="popular_section">
    <div class="container">
     <?php if(!empty($category_block_title) || !empty($category_block_description)): ?>
       <header class="section-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" 
@@ -37,6 +37,7 @@ $category_block_description = get_field('category_block_description');
     <?php endif; ?>
       <div class="grid wow fadeInUp justify-content-center" data-wow-duration="1s" data-wow-delay="0.1s" 
          style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+           <div id="owl-carousel" class="owl-carousel owl-theme">
         <?php
 
 //  $cats = get_terms( array(
@@ -52,13 +53,17 @@ $category_block_description = get_field('category_block_description');
             $cat_img = get_field('image', $cat);
             $cat_price = get_field('amount', $cat);
             $cat_text = get_field('sub_title', $cat);
+            // var_dump($cat_img['sizes']['grid-thumb']);
+            // $image_url =  $cat_img['sizes']['custom-size-cat'];
+            $image_url = $cat_img['url'];
         ?>
          <!-- .col -->
+         <div class="item">
          <div class="col">
             <div class="img-holder">
                <a href="<?php echo site_url().'/packages/?cat='.$cat->term_id; ?>">
-               <img width="300" height="300" src="<?php echo $cat_img['url']; ?>" class="attachment-travel-agency-popular-small size-travel-agency-popular-small wp-post-image" alt="<?php echo $cat_img['alt']; ?>" loading="lazy" >									</a>
-               <span class="price-holder"><span>starting From<br><strong>$ <?php echo $cat_price; ?></strong></span></span>									
+               <img width="300" height="300" src="<?php echo $image_url; ?>" class="attachment-travel-agency-popular-small size-travel-agency-popular-small wp-post-image" alt="<?php echo $cat_img['alt']; ?>" loading="lazy" >									</a>
+               <span class="price-holder"><span>Starting @ <strong>Rs. <?php echo $cat_price; ?>/-</strong></span></span>									
                <div class="text-holder">
                   <h3 class="title"><a href="<?php echo get_category_link( $cat->term_id ) ?>"><?php echo $cat->name; ?></a></h3>
                   <?php if($cat_text){ ?>
@@ -74,12 +79,14 @@ $category_block_description = get_field('category_block_description');
                </div>
             </div>
          </div>
+       </div>
         <?php } ?>
        
       </div>
+    </div>
       <!-- .grid -->
-      <div class="btn-holder"><a href="<?php echo site_url(); ?>/packages/" class="btn-more">View All Packages</a></div>
-   </div>
+    <!--   <div class="btn-holder"><a href="<?php echo site_url(); ?>/packages/" class="btn-more">View All Packages</a></div>
+   </div> -->
    <!-- .container-large -->
 </section>
 <?php
@@ -162,7 +169,7 @@ $packages_block_description = get_field('packages_block_description');
                         </div>
                     </div>
                     <div class="btn-holder">
-                     <a href="#" class="btn-more popmake-133">Book Now</a>
+                     <a href="#" class="btn-more popmake-133">Enquire Now</a>
                     <a href="<?php echo get_the_permalink($package); ?>" class="btn-more">View Details</a>
 
                     </div>

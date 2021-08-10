@@ -103,7 +103,7 @@ $cat_id = $_GET['cat'];
                                  </div>
                               </div>
                               <div class="btn-holder">
-                                 <a href="#" class="btn-more popmake-133">Book Now</a>
+                                 <a href="#" class="btn-more popmake-133">Enquire Now</a>
                                  <a href="<?php echo get_the_permalink($package); ?>" class="btn-more">View Details</a>
                               </div>
                            </div>
