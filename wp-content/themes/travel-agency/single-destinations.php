@@ -59,6 +59,8 @@
 			<?php echo $map; ?>
 		</div>
 		<?php } ?>
+		<?php $place = get_field('place'); 
+    if($place) { ?>
 		<div class="places-to-visit">
 			<header class="section-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; 
       animation-delay: 0.1s; animation-name: fadeInUp;">
@@ -67,8 +69,9 @@
   	
     
     </header>
+    
 			<div id="owl-carousel-place" class="owl-carousel owl-theme">
-				<?php $place = get_field('place'); 
+				<?php  
 				//var_dump($place); 
 				foreach ($place as $places) { ?>
 				<div class="item">
@@ -85,7 +88,16 @@
 				?>
 				
 			</div>
+	
 		</div>
+		<?php } ?>
+		<?php 
+	global $post;
+	$term = get_the_terms($post->ID,'packagescategories');
+	// var_dump($term);
+if($term[0]->parent ==0)
+get_template_part('template-parts/package-slider'); 
+?>
 	</div>
 </section>
 

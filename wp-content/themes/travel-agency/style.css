@@ -8587,7 +8587,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
       color: #ffffff;
       /*background: linear-gradient(135deg, rgb(15 81 50) 0%, rgb(9 73 44) 100%);*/
       background: #0d0d75db;
-      width: 50px;
+      width: auto;
       height: 50px;
       float: right;
       border-radius: 10px;
@@ -8595,6 +8595,12 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
       transition: 0.3s all;
       box-shadow: 0 30px 50px #0000000d;
       overflow: hidden;
+}
+.pop-icon p{
+    margin: 0;
+}
+.pop-icon svg{
+    margin-right: 5px;
 }
 .popup-box-form-submit .grid-form {
     display: inline-block;
@@ -8774,7 +8780,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .homeslider_section .owl-nav,
 .places-to-visit .owl-nav{
     margin: 0 auto;
-    display: block !important;
+    /*display: block !important;*/
     text-align: center;
     margin-top: 25px;
 }
@@ -8877,6 +8883,10 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .place-box{
 
 }
+.state-filter-wrap .tabs__tab:not(.active):hover a{
+    color: #fff;
+    text-decoration: none;
+}
 /*My code end*/
 @media only screen and (min-width: 1024px){
 .pum-container.pum-responsive.pum-responsive-medium {
@@ -8910,8 +8920,8 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     /*display: none;*/
 }
 .pop-icon{
-    width: 70px;
-    height: 70px;
+    /*width: 70px;
+    height: 70px;*/
     position: absolute;
     right: 0;
     bottom: 0;

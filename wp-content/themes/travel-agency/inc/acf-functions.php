@@ -22,38 +22,34 @@ Class MindPopACFHandler {
 			// 			) );
 		}
 
-		add_filter('acf/load_field/name=state_offer', array($this,'acf_load_select_field_choices'));
+		add_filter('acf/load_field/name=state_offer_2', array($this,'acf_load_select_field_choices'));
 	}
 
-	public function acf_load_select_field_choices()
+	public function acf_load_select_field_choices($field)
 	{
 		 $field['choices'] = array();
 
 
-    // if has rows
-    if( have_rows('my_select_values', 'option') ) {
-        
-        // while has rows
-        while( have_rows('my_select_values', 'option') ) {
-            
-            // instantiate row
-            the_row();
-            
-            
-            // vars
-            $value = get_sub_field('value');
-            $label = get_sub_field('label');
+         $cats = get_terms( array(
+                 'taxonomy' => 'packagescategories',
+                 'hide_empty' => false,
+               ) );
 
-            
-            // append to choices
+         
+        foreach($cats as $cat) {
+            // var_dump($cat->term_id);die();
+            if($cat->parent == 0)
+            {
+            $label = $cat->name;
+            $value = $cat->term_id;
+
             $field['choices'][ $value ] = $label;
+            }
+
+            $field['choices'][ 'all' ] = 'All';
             
         }
-        
-    }
-
-
-    // return the field
+   
     return $field;
 	}
 

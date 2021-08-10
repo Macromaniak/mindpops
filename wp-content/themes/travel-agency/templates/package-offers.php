@@ -3,90 +3,22 @@
  /* Template Name:  Offer Packages */ 
 get_header(); 
 
-if(isset($_GET['state']))
-$state_id = $_GET['state'];
+// if(isset($_GET['state']))
+// $state_id = $_GET['state'];
 
-if(isset($_GET['pcat']))
-$cat_id = $_GET['pcat'];
+// if(isset($_GET['pcat']))
+// $cat_id = $_GET['pcat'];
+$state = get_field('state_offer_2');
 ?>
 <section class="our-deals" id="deal_section">
    <div class="tabs">
       <div class="container">
-        <?php 
-        $cats = get_terms( array(
-                 'taxonomy' => 'packagescategories',
-                 'hide_empty' => false,
-               ) );
-        $parent_list = array();
-        $child_list = array();
-        foreach($cats as $cat) {
-            $item = array(
-                    'term_id' => $cat->term_id,
-                    'name' => $cat->name
-                );
-            if($cat->parent == 0)
-                array_push($parent_list, $item);
-            else
-            {
-                if($state_id != 0)
-                {
-                    if($cat->parent == $state_id)
-                        array_push($child_list, $item);
-                }
-                else
-                array_push($child_list, $item);
-            }
-        }
-
-
-        if(sizeof($parent_list) > 0){
-        ?>
-        <div class="filter-wrap state-filter-wrap">
-            <h3>Filter by state</h3>
-         <div role="tablist" class="tabs__control parent-list">
-            <button  class="tabs__tab state-filter" catid = "0" >All</button>
-            <?php
-                 foreach($parent_list as $cat) {
-               ?>
-            <button class="tabs__tab state-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
-            <?php  
-                } 
-               ?>
-         </div>
-         </div>
-        <?php } ?>
-
-        <?php
-        if(sizeof($child_list) > 0 && $state_id != 0){
-        ?>
-        <div class="filter-wrap category-filter-wrap">
-            <h3>Filter by category</h3>
-         <div role="tablist" class="tabs__control child-list">
-            <button  class="tabs__tab cat-filter" catid = "0" >All</button>
-            <?php
-                 foreach($child_list as $cat) {
-               ?>
-            <button class="tabs__tab cat-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
-            <?php  
-                } 
-               ?>
-         </div>
-        </div>
-        <?php } ?>
+   
       </div>
       <div class="container tabed-content">
       <div class="grid grid-latest" >
                      <?php
 
-                     $cat_list = array();
-
-                     if($cat_id && $cat_id !=0)
-                        array_push($cat_list, intval($cat_id));
-
-                    if($state_id && $state_id !=0)
-                        array_push($cat_list, intval($state_id));
-
-                      // var_dump($cat_list);
 
                      $args = array(
                         'post_type' => 'packages',
@@ -95,11 +27,11 @@ $cat_id = $_GET['pcat'];
                         'orderby' => 'ID'
                         );
 
-                     if($cat_id || $state_id)
+                    if($state !='all')
                      $args['tax_query'] = array(
                           array(
                               'taxonomy' => 'packagescategories',
-                              'terms' => $cat_list,
+                              'terms' => $state,
                               'field' => 'term_id',
                           )
                         );
@@ -115,7 +47,8 @@ $cat_id = $_GET['pcat'];
                           $places_covered = get_field('places_covered');
                           $number_of_days = get_field('number_of_days');
                           $number_of_nights = get_field('number_of_nights');
-                          if(get_field('is_offer')){
+                          if(get_field('is_offer')) :
+
                           	$offer_count++;
                            ?>
 
@@ -140,16 +73,16 @@ $cat_id = $_GET['pcat'];
                                       </ul>
                                   </div>
                                  <div class="category-trip-desti">
-                                       <?php if(!empty($places_covered)): ?>
-                        <span class="category-trip-loc">
-                           <i>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="11.213" height="15.81" viewBox="0 0 11.213 15.81">
-                                 <path id="Path_23393" data-name="Path 23393" d="M5.607,223.81c1.924-2.5,5.607-7.787,5.607-10.2a5.607,5.607,0,0,0-11.213,0C0,216.025,3.682,221.31,5.607,223.81Zm0-13.318a2.492,2.492,0,1,1-2.492,2.492A2.492,2.492,0,0,1,5.607,210.492Zm0,0" transform="translate(0 -208)" opacity="0.8"></path>
-                              </svg>
-                           </i>
-                           <span><?php echo $places_covered; ?></span>
-                        </span><br>
-                        <?php endif; ?>
+                                <?php if(!empty($places_covered)): ?>
+                                <span class="category-trip-loc">
+                                   <i>
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="11.213" height="15.81" viewBox="0 0 11.213 15.81">
+                                         <path id="Path_23393" data-name="Path 23393" d="M5.607,223.81c1.924-2.5,5.607-7.787,5.607-10.2a5.607,5.607,0,0,0-11.213,0C0,216.025,3.682,221.31,5.607,223.81Zm0-13.318a2.492,2.492,0,1,1-2.492,2.492A2.492,2.492,0,0,1,5.607,210.492Zm0,0" transform="translate(0 -208)" opacity="0.8"></path>
+                                      </svg>
+                                   </i>
+                                   <span><?php echo $places_covered; ?></span>
+                                </span><br>
+                                <?php endif; ?>
                                     <div class="meta-info">
                                        <span class="time">
                                           <i>
@@ -170,7 +103,7 @@ $cat_id = $_GET['pcat'];
                                             <?php $exclusions = get_field('exclusions');
                                                        $inclutions = get_field('inclutions');
                                                        
-                                                       if(!empty($inclutions)): ?>
+                                          if(!empty($inclutions)): ?>
                                              <div class="inc">
                                                 <h3>Inclusions</h3>
                                                  <ul>
@@ -185,9 +118,9 @@ $cat_id = $_GET['pcat'];
                                                        ?>
                                                  </ul>
                                              </div>
-                                             <?php 
-                                             endif;
-                                             if(!empty($exclusions)): ?>
+                                          <?php 
+                                          endif;
+                                          if(!empty($exclusions)): ?>
                                              <div class="exc">
                                                 <h3>Exclusions</h3>
                                                 <ul>
@@ -202,7 +135,7 @@ $cat_id = $_GET['pcat'];
                                                         ?>
                                                  </ul>
                                              </div>
-                                           <?php endif; ?>
+                                          <?php endif; ?>
                                           </div>
                                        </div>
       		            				   <span class="readmore-btn" id="<?php echo $post->ID ?>">Read More</span>
@@ -217,12 +150,9 @@ $cat_id = $_GET['pcat'];
                         </div>
                      </div>
                      <?php
-                      }
-                        endwhile;
-                        else : ?>
-                          <h2>No Packages Found!!!!!</h2>
-                       <?php 
-                     endif;
+                      endif;
+                    endwhile;
+                    endif;
 
                      if($offer_count==0)
                       {

@@ -96,7 +96,8 @@ $block_4 = get_field('block_4','theme_options');
 		<?php echo do_shortcode('[contact-form-7 id="176" title="Contact Us Popup"]'); ?>
 	</div><!--popup-box-->
 	<div class="pop-icon">
-		<i class="fas fa-envelope"></i>
+		<i class="fas fa-location-arrow"></i>
+		<p>Plan Your Trip</p>
 	</div><!--pop-icon-->
 </div><!--popup-box-form-submit-->
  <?php

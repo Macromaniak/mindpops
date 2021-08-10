@@ -6,11 +6,7 @@ get_header();
 if(isset($_GET['state']))
 $state_id = $_GET['state'];
 
-if(isset($_GET['pcat']))
-$cat_id = $_GET['pcat'];
 
-if($state_id == 0)
-    $cat_id = 0;
 ?>
 <?php get_template_part('template-parts/package-banner'); ?>
 <section class="our-deals" id="deal_section">
@@ -26,7 +22,8 @@ if($state_id == 0)
         foreach($cats as $cat) {
             $item = array(
                     'term_id' => $cat->term_id,
-                    'name' => $cat->name
+                    'name' => $cat->name,
+                    'link' => get_term_link($cat->term_id)
                 );
             if($cat->parent == 0)
                 array_push($parent_list, $item);
@@ -52,8 +49,9 @@ if($state_id == 0)
             <button  class="tabs__tab state-filter" catid = "0" >All</button>
             <?php
                  foreach($parent_list as $cat) {
+                  // var_dump($cat);
                ?>
-            <button class="tabs__tab state-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
+            <button class="tabs__tab state-filter" catid = "<?php echo $cat['term_id']; ?>"><a href="<?php echo $cat['link'] ?>"><?php echo $cat['name']; ?></a></button>
             <?php  
                 } 
                ?>
@@ -61,23 +59,7 @@ if($state_id == 0)
          </div>
         <?php } ?>
 
-        <?php
-        if(sizeof($child_list) > 0 && $state_id != 0){
-        ?>
-        <div class="filter-wrap category-filter-wrap">
-            <h3>Filter by category</h3>
-         <div role="tablist" class="tabs__control child-list">
-            <button  class="tabs__tab cat-filter" catid = "0" >All</button>
-            <?php
-                 foreach($child_list as $cat) {
-               ?>
-            <button class="tabs__tab cat-filter" catid = "<?php echo $cat['term_id']; ?>"><?php echo $cat['name']; ?></button>
-            <?php  
-                } 
-               ?>
-         </div>
-        </div>
-        <?php } ?>
+       
       </div>
       <div class="container tabed-content">
       <div class="grid grid-latest" >

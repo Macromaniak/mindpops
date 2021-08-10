@@ -17,7 +17,7 @@ add_action( 'wp_enqueue_scripts', 'new_themes_styles' );
  function new_themes_js() {
     wp_enqueue_script( 'js0', get_stylesheet_directory_uri() . '/js/ajax-scripts.js', '', '', true );
     wp_enqueue_script( 'js1', get_stylesheet_directory_uri() . '/js/slick.js', '', '', true );
-    wp_enqueue_script( 'js2', get_stylesheet_directory_uri() . '/js/owl.carousel.min', '', '', true );
+    wp_enqueue_script( 'js2', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js', '', '', true );
     wp_enqueue_script( 'js3', get_stylesheet_directory_uri() . '/js/custom.js', '', '', true );
 }
    add_action( 'wp_enqueue_scripts', 'new_themes_js' );
@@ -62,6 +62,6 @@ function filter_the_category_of_sponsors($terms) {
 // add the filter 
 add_filter( 'get_terms', 'filter_the_category_of_sponsors', 10, 1 );
 
-
+add_theme_support( 'post-thumbnails' );
 
 ?>

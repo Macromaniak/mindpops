@@ -60,7 +60,7 @@ tabs_items.forEach(function (tabs) {
   });
 
  jQuery('#owl-carousel').owlCarousel({
-    loop: true,
+    loop: false,
     // dots: true,
   margin: 10,
   nav: true,
@@ -83,7 +83,7 @@ tabs_items.forEach(function (tabs) {
   }
 })
   jQuery('#owl-carousel-home').owlCarousel({
-    loop: true,
+    loop: false,
     //dots: false,
   margin: 10,
   nav: true,
@@ -107,7 +107,7 @@ tabs_items.forEach(function (tabs) {
 })
 
 jQuery('#owl-carousel-package').owlCarousel({
-    loop: true,
+    loop: false,
     //dots: false,
   margin: 10,
   nav: true,
@@ -130,7 +130,7 @@ jQuery('#owl-carousel-package').owlCarousel({
   }
 })
 jQuery('#owl-carousel-place').owlCarousel({
-    loop: true,
+    loop: false,
     //dots: false,
   margin: 10,
   nav: true,
