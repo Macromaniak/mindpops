@@ -6,12 +6,16 @@ var tabs_items = document.querySelectorAll(".tabs");
 tabs_items.forEach(function (tabs) {
   // Set variable
   var controls = tabs.querySelector(".tabs__control");
-  var tab = controls.querySelectorAll(".tabs__tab");
-  var contents = tabs.querySelector(".tabs__contents");
+  if(controls)
+    var tab = controls.querySelectorAll(".tabs__tab");
+  if(tab)
+    var contents = tabs.querySelector(".tabs__contents");
   if(contents)
-  var content = contents.querySelectorAll(".tabs__content");
+    var content = contents.querySelectorAll(".tabs__content");
 
   // Loop through all tabs
+  if(tab)
+  {
   tab.forEach(function (item) {
     item.onclick = function (e) {
       e.preventDefault();
@@ -44,7 +48,9 @@ tabs_items.forEach(function (tabs) {
       });
     };
   });
+  };
 });
+
 
   // Testimonial slider
   jQuery('.testimonial-slider').slick({
@@ -194,6 +200,10 @@ jQuery(document).ready(function(){
          
     });
 
+    jQuery('.pop-icon').click(function(){
+    jQuery('.popup-box').toggle('show');
+  });
+
      // jQuery('.popup-box').show(500);
       // Home slider
 
@@ -242,6 +252,3 @@ jQuery(document).ready(function(){
 
 });
 
-jQuery('.pop-icon').click(function(){
-  jQuery('.popup-box').toggle('show');
-});

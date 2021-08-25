@@ -385,7 +385,7 @@ hr {
 ul,
 ol {
     margin: 0 0 1.5em 0;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 0px;
 }
 
 ul {
@@ -1208,6 +1208,22 @@ dfn, cite, em, i {
     .testi-item {
         max-width: 600px;
     }
+    .popular-destination-home .owl-carousel .owl-nav button.owl-next, 
+    .popular-destination-home .owl-carousel .owl-nav button.owl-prev, 
+    .popular-destination-home .owl-carousel button.owl-dot, 
+    .homeslider_section .owl-carousel .owl-nav button.owl-next, 
+    .homeslider_section .owl-carousel .owl-nav button.owl-prev, 
+    .homeslider_section .owl-carousel button.owl-dot, 
+    .places-to-visit .owl-carousel .owl-nav button.owl-next, 
+    .places-to-visit .owl-carousel .owl-nav button.owl-prev, 
+    .places-to-visit .owl-carousel button.owl-dot{
+        padding: 20px 30px !important;
+        width: 50px;
+        height: 40px;
+    }
+    .blog-section .grid .post .img-holder img{
+        width: 100%;
+    }
 
 }
 @media (max-width: 768px){
@@ -1241,6 +1257,17 @@ dfn, cite, em, i {
 
     .main-navigation ul li.hover>ul {
         display: block !important;
+    }
+    #social_side_links
+    {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (min-width: 415px) {
+    .page-template-package-offers #deal_section
+    {
+        padding-top: 140px;
     }
 }
 
@@ -8370,6 +8397,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     font-size: 15px;
     font-weight: 400;
 }
+
 .popmake-content form p{
     margin-bottom: 0;
 }
@@ -8643,6 +8671,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .category-trip-detail-wrap .amenities ul
 {
     margin-bottom: 10px;
+    /*margin-left: 20px;*/
 }
 
 .form-section .social-media ul
@@ -8755,10 +8784,10 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 #social_side_links{
     list-style: none;
-    margin-left: -10px;
+    margin-left: 0px;
 }
 #social_side_links li{
-    padding: 10px;
+    padding: 10px 15px 10px 15px;
     background: #fff;
 }
 #social_side_links li:hover #social_side_links li a svg,
@@ -8887,6 +8916,98 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     color: #fff;
     text-decoration: none;
 }
+.main-header-one{
+    background: #32b67a;
+    color: #fff;
+    text-align: right;
+    padding: 0px 15px;
+}
+.social-media ul{
+    display: inline-flex;
+    margin-bottom: 0;
+}
+.social-media ul li{
+    list-style: none;
+    padding: 5px 10px;
+}
+.social-media ul li a{
+    color: #fff;
+}
+.social-media ul li a:hover{
+    color: #000;    
+}
+.header-new-second{
+    background: #fff;
+    width: 100%;
+    display: inline-flex;
+    padding: 0px 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.main-header-new{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.logo-box{
+    width: 20%;
+    float:left;
+}
+.logo-box .text-logo{
+    display: inline-block;
+    vertical-align: middle;
+}
+.logo-box .text-logo .site-title{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 55px;
+    margin: 0;
+    font-family: var(--secondary-font);
+    vertical-align: middle;
+}
+.logo-box .text-logo .site-title a:hover{
+    text-decoration: none;
+}
+.menu-box{
+    width: 60%;
+    float: left;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+.call-box{
+    float: left;
+    width: 20%;
+    padding-top: 28px;
+    text-align: right;
+}
+.call-box .tel-link{
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    transition: linear 0.2s;
+}
+.call-box .tel-link:hover{
+    text-decoration: none;
+    color: #000;
+}
+.menu-box .nav-holder{
+    border: none;
+}
+.call-box svg{
+    font-size: 28px;
+    margin-left: 10px;
+    color: #32b67a
+}
+.category-trip-detail-wrap .amenities
+{
+    padding: 0 20px;
+}
+.readmore-btn
+{
+    cursor: pointer;
+    color: #32b67a;
+    text-transform: capitalize;
+}
+
 /*My code end*/
 @media only screen and (min-width: 1024px){
 .pum-container.pum-responsive.pum-responsive-medium {
@@ -8897,16 +9018,78 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 
 }
 @media only screen and (max-width: 1024px){
+.banner .form-holder{
+    top: 65%;
+}
+.banner .form-holder .text h1, 
+.banner .form-holder .text h2{
+    font-size: 40px;
+    line-height: normal;
+}
+.banner .form-holder .text{
+    margin: 0 0 15px;
+}
 .our-deals .grid .img-holder img{
     min-height: auto;
     height: auto;
 }
 .buttons_single-package{
     position: relative;
-    padding-left: 15px;
+    padding-left: 0px;
+}
+.call-box{
+    display: none;
+}
+.main-header-one{
+    text-align: center;
+}
+.main-header-one ul li svg{
+    font-size: 16px;
+}
+.social-media ul li{
+    padding: 2px 10px;
+}
+.main-header-new{
+    max-width: 100%;
+}
+.logo-box, .menu-box{
+    width: 50%;
+    float: left;
+    /*padding-right: 25px;*/
+    padding: 5px 0px;
+}
+.logo-box img{
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+.header-new-second{
+    display: inline-block;
+}
+.section-header{
+    margin: 0 auto 30px;
+}
+.blog-section .grid .post .text-holder .entry-content{
+    height: auto;
 }
 }
 @media only screen and (max-width: 991px) {
+.section-header .section-title{
+    font-size: 25px;
+}
+.banner-content p{
+    margin: 0;
+}
+.banner-form #searchsubmit{
+    margin-top: 5px;
+}
+.popular-destination{
+    padding: 20px 0px;
+}
+.featured-trip .grid-latest .text-holder .category-trip-desti, 
+.our-deals .grid-latest .text-holder .category-trip-desti{
+    padding: 0px 25px;
+}
 .destination-section .grid {
     display: block;
 }
@@ -8920,14 +9103,17 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     /*display: none;*/
 }
 .pop-icon{
-    /*width: 70px;
-    height: 70px;*/
+    /*width: 70px;*/
+    height: 40px;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -18px;
 }
 .pop-icon svg{
-    font-size: 30px;
+    font-size: 18px;
+}
+.pop-icon p{
+    font-size: 14px;
 }
 .popup-box-form-submit{
     bottom: 20px;
@@ -8939,25 +9125,25 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     max-width: 100%;
 }
 .popup-box {
-    width: 65%;
+    width: 100%;
     margin: 0 auto;
     display: block;
-    padding-top: 100px;
+    padding-top: 35px;
     margin-bottom: 0px;
     background: #fff;
     box-shadow: 0 20px 38px rgb(0 0 0 / 15%);
     border: 1px solid #0d0d75db;
     border-radius: 10px;
     margin-right: 0;
-    height: 1060px;
+    height: auto;
 }
 .popup-box-form-submit .grid-form input, 
 .popup-box-form-submit .grid-form select {
     width: 100%;
-    height: 60px;
+    height: 50px;
     border-radius: 5px;
-    margin-bottom: 30px;
-    font-size: 22px;
+    margin-bottom: 15px;
+    font-size: 15px;
     background-color: #fff;
 }
 .common-contact .col-6 {
@@ -8996,10 +9182,12 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .package-single-row .package-left {
     min-height: auto;
     position: relative;
-    padding: 15px;
+    padding: 15px 30px;
 }
 .package-single-row .btn-more{
     position: unset;
+    display: block;
+    margin-bottom: 10px;
 }
 .grid-form{
     display: block;
@@ -9011,13 +9199,13 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     padding:0px 15px;
 }
 .contact-left input, .contact-left select {
-    width: 95%;
+    width: 100%;
 }
 .form-col{
     margin-bottom: 30px;
 }
 p{
-    font-size: 20px;
+    font-size: 15px;
     line-height: normal;
 }
 .featured-trip .grid-latest .text-holder .category-trip-loc span, 
@@ -9026,7 +9214,7 @@ p{
 .testi-item p,
 .our-deals .grid .text-holder .btn-more,
 .popular-destination .btn-holder .btn-more{
-    font-size: 18px;
+    font-size: 14px;
 }
 .popular-destination .grid .col .text-holder .title{
     font-size: 25px;
@@ -9035,8 +9223,97 @@ p{
 .main-navigation ul{
     font-size: 20px;
 }
+.our-deals .grid .text-holder .btn-more{
+    margin-bottom: 10px;
+}
+.category-trip-detail-wrap .amenities ul{
+    margin-left: 20px;
+}
+#social_side_links li{
+    padding: 10px 10px 10px 10px;
+}
+#social_side_links li a svg {
+    font-size: 20px;
+}
+.page-header .page-title{
+    font-size: 30px;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+.grid-common h2 {
+    font-size: 24px;
+}
+.grid-common h2, .grid-common h3, .grid-common h4, .grid-common h5{
+    line-height: normal;
+}
+.grid-common{
+    padding-top: 30px !important;
+}
+.page-template-package-offers .our-deals{
+    padding-top: 80px;
+}
+.grid {
+    margin: 0px 0px 0px;
+}
+.single-packages .our-deals{
+    padding-top: 100px;
+}
+.our-deals .grid{
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.itinerary-count,
+.itinerary-title{
+    width: 100%;
+    display: block;
+}
+.itinerary-count::before{
+    display: none;
+}
+.itinerary-title{
+    margin-top: 10px;
+}
+.Itinerary-title-box{
+    height: auto;
+    border-bottom: none;
+}
+.grid-left-right{
+    border-top: 1px solid #32b67a;
+}
+.night-stay{
+    font-size: 15px;
+}
+.no-results {
+    padding: 130px 0px 0px;
+}
+.no-results #searchsubmit{
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+.popmake-content input.wpcf7-submit{
+    width: 100%;
+}
+.popmake-content input, .popmake-content textarea, .popmake-content form-select, .popmake-content select
+{
+    width: 100%!important;
+}
+.popmake-content input.wpcf7-submit
+{
+    width: 50%!important;
+}
+.blog-section
+{
+    padding: 20px 0;
+}
+.testimoinal
+{
+    padding: 20px 0;
 }
 
+}
+/*991 end*/
 
 
 @media only screen and (max-width: 1200px) {
@@ -9190,7 +9467,7 @@ p{
     .nav-holder {
         border-top: 0;
         border-bottom: 0;
-        padding: 15px 0 0;
+        padding: 28px 0 0;
         margin: 0 0 15px;
     }
 
@@ -9223,19 +9500,19 @@ p{
         font-size: 15px;
         font-weight: 500;
         font-family: var(--secondary-font);
-        width: 96px;
-        height: 35px;
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        background: #32b67a;
+        border-radius: 0px;
         text-align: center;
-        padding: 3px 0 0;
+        padding: 5px;
         cursor: pointer;
     }
 
     #primary-toggle-button svg {
-        font-size: 22px;
+        font-size: 20px;
         vertical-align: middle;
-        margin-left: 10px;
+        margin-left: 0px;
     }
 
     /* #site-navigation {
@@ -9269,7 +9546,7 @@ p{
     .main-navigation ul li {
         float: none;
         display: block;
-        margin: 0 0 2px;
+        margin: 10px 0 2px;
 
     }
 
@@ -9279,6 +9556,7 @@ p{
         position: relative;
         background: rgba(0, 0, 0, 0.2);
         border-radius: 5px;
+        font-size: 15px;
     }
 
     .main-navigation ul li a:hover,
@@ -9340,7 +9618,7 @@ p{
 
     .main-navigation ul ul li a {
         background: none;
-        padding: 0 10px;
+        padding: 15px 10px;
     }
 
     .main-navigation ul ul .current_page_item,
@@ -9386,7 +9664,7 @@ p{
     }
 
     .site-footer .column {
-        width: 50%;
+        width: 100%;
     }
 
     .site-footer .site-info {
@@ -9502,16 +9780,16 @@ p{
 
 .mobile-navigation .close {
     position: absolute;
-    right: 10px;
-    top: -44px;
+    right: 0px;
+    top: -53px;
     display: block;
     float: right;
     color: #fff;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     font-family: var(--secondary-font);
     width: 96px;
-    height: 35px;
+    height: 30px;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     text-align: center;
@@ -9520,7 +9798,7 @@ p{
 }
 
 .mobile-navigation .close svg {
-    font-size: 22px;
+    font-size: 15px;
     vertical-align: middle;
     margin-left: 10px;
 }
