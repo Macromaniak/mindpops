@@ -2,6 +2,7 @@
 
  /* Template Name: Contact */ 
 get_header(); 
+$title_underline_image = get_field('underline_image');
 get_template_part('template-parts/banner-innerpage'); ?>
 <section class="common-contact" id="deal_section">
     <div class="container">
@@ -13,7 +14,9 @@ get_template_part('template-parts/banner-innerpage'); ?>
          		</div>
          	</div>
          	<div class="col-6 form-col">
+                <h3>Enquire Now</h3>
          		<div class="contact-left">
+
          			<?php echo do_shortcode('[contact-form-7 id="108" title="Contact Us"]'); ?>
          		</div>
          	</div>

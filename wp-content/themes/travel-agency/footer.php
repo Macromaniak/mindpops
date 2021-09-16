@@ -1,14 +1,3 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Travel_Agency
- */
-?>
 
 <?php
 $block_1_title = get_field('block_1_title','theme_options');
@@ -43,10 +32,10 @@ $block_4 = get_field('block_4','theme_options');
 						<h2 class="widget-title"><?php echo $block_2_title; ?></h2>
 						<div class="menu-footer-menu-container">
 							<ul id="menu-footer-menu" class="menu">
-								<?php foreach ($block_2 as $b2) {
-									// var_dump($b2['link']);
+								<?php foreach ($block_2 as $bl2) {
+									
 								?>
-								<li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-destination menu-item-328"><a href="<?php echo $b2['link']['url'] ?>" <?php if($b2['link']['target']){ ?>target="<?php$b2['link']['target']?>" <?php } ?>><?php echo $b2['link']['title'] ?></a></li>
+								<li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-destination menu-item-328"><a href="<?php echo $bl2['link']['url'] ?>" <?php if($bl2['link']['target']){ ?>target="<?php echo $bl2['link']['target']?>" <?php } ?>><?php echo $bl2['link']['title'] ?></a></li>
 								<?php } ?>
 							</ul>
 						</div>
@@ -58,9 +47,9 @@ $block_4 = get_field('block_4','theme_options');
 						<div class="menu-footer-menu-2-container">
 							<ul id="menu-footer-menu-2" class="menu">
 								<?php foreach ($block_3 as $b3) {
-									// var_dump($b2['link']);
+									
 								?>
-								<li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-destination menu-item-328"><a href="<?php echo $b3['link']['url'] ?>" <?php if($b3['link']['target']){ ?>target="<?php$b3['link']['target']?>" <?php } ?>><?php echo $b3['link']['title'] ?></a></li>
+								<li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-destination menu-item-328"><a href="<?php echo $b3['link']['url'] ?>" <?php if($b3['link']['target']){ ?>target="<?php echo $b3['link']['target']?>" <?php } ?>><?php echo $b3['link']['title'] ?></a></li>
 								<?php } ?>
 							</ul>
 						</div>
@@ -72,9 +61,9 @@ $block_4 = get_field('block_4','theme_options');
 						<div class="menu-footer-menu-3-container">
 							<ul id="menu-footer-menu-3" class="menu">
 								<?php foreach ($block_3 as $b4) {
-									// var_dump($b2['link']);
+									
 								?>
-								<li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-destination menu-item-328"><a href="<?php echo $b4['link']['url'] ?>" <?php if($b4['link']['target']){ ?>target="<?php$b4['link']['target']?>" <?php } ?>><?php echo $b4['link']['title'] ?></a></li>
+								<li id="menu-item-328" class="menu-item menu-item-type-taxonomy menu-item-object-destination menu-item-328"><a href="<?php echo $b4['link']['url'] ?>" <?php if($b4['link']['target']){ ?>target="<?php echo $b4['link']['target']?>" <?php } ?>><?php echo $b4['link']['title'] ?></a></li>
 								<?php } ?>
 							</ul>
 						</div>
@@ -82,14 +71,26 @@ $block_4 = get_field('block_4','theme_options');
 				</div>
 			</div>
 		</div>
+		<div class="footer-m">
+			  <?php
+          wp_nav_menu( array(
+            'theme_location' => 'Footer Menu',
+            'menu_id'        => 'Footer Menu',
+                            
+          ) );
+        ?>
+		</div><!--footer-m-->
 		<div class="footer-b">
-			<div class="site-info"> <span class="copyright">© Copyright 2021 <a href="#">Uthradam designs</a>. </div>
+			<div class="site-info"> <span class="copyright">  © Copyright <?php echo date('Y'); ?> mindpopz.com, All Rights Reserved. Designed & Developed By  <a href="#">Uthradam Designs</a>. </div>
 			<!-- <nav class="footer-navigation"> </nav> -->
 			<!-- .footer-navigation -->
 		</div>
 	</div>
 	<!-- .container -->
 </footer>
+<div>
+	<p id="button" class="scrollTop"><i class="fa fa-angle-up" aria-hidden="true"></i></p>
+ </div>
 <div class="popup-box-form-submit"  >
 	<div class="popup-box" style="display: none;">
 		<h2>Book Now</h2>
@@ -146,6 +147,21 @@ jQuery(document).ready(function(){
 })
 
 });
+var btn =  jQuery('#button');
+
+ jQuery(window).scroll(function() {
+  if ( jQuery(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  jQuery('html, body').animate({scrollTop:0}, '300');
+});
+
 	
 </script>
 

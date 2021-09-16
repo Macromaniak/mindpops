@@ -18,6 +18,7 @@ travel_agency_get_template_part( esc_attr( 'banner' ) );
 
 $category_block_title = get_field('category_block_title');
 $category_block_description = get_field('category_block_description');
+$cat_block_underline = get_field('category_block_underline_image');
 ?>
 
 <section class="popular-destination popular-destination-home" id="popular_section">
@@ -25,7 +26,12 @@ $category_block_description = get_field('category_block_description');
     <?php if(!empty($category_block_title) || !empty($category_block_description)): ?>
       <header class="section-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" 
          style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
-         <?php if(!empty($category_block_title)){ ?><h2 class="section-title"><?php echo $category_block_title; ?></h2> <?php } 
+         <?php if(!empty($category_block_title)){ ?><h2 class="section-title <?php echo $cat_block_underline ? 'no-bottom-padding' : 'ul-green' ?>"><?php echo $category_block_title; ?></h2> <?php }
+
+         if($cat_block_underline){
+            echo '<img src ="'.get_stylesheet_directory_uri().'/images/big-separator.png">';
+         }
+
          if(!empty($category_block_description)):
          ?>
          <div class="section-content">
@@ -39,14 +45,9 @@ $category_block_description = get_field('category_block_description');
          style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
            <div id="owl-carousel" class="owl-carousel owl-theme">
         <?php
-
-//  $cats = get_terms( array(
-//     'taxonomy' => 'packagescategories',
-//     'hide_empty' => false,
-// ) );
         global $post;
         $cats = get_field('category_block_cat_block_categories',$post);
-// var_dump($cats);
+        // var_dump($cats);
 
           foreach($cats as $cat) {
 
@@ -55,14 +56,15 @@ $category_block_description = get_field('category_block_description');
             $cat_text = get_field('sub_title', $cat);
             // var_dump($cat_img['sizes']['grid-thumb']);
             // $image_url =  $cat_img['sizes']['custom-size-cat'];
-            $image_url = $cat_img['url'];
+            // var_dump($cat_img['sizes']);
+            $image_url = $cat_img['sizes']['travel-agency-popular-small'];
         ?>
          <!-- .col -->
          <div class="item">
          <div class="col">
             <div class="img-holder">
-               <a href="<?php echo site_url().'/packages/?cat='.$cat->term_id; ?>">
-               <img width="300" height="300" src="<?php echo $image_url; ?>" class="attachment-travel-agency-popular-small size-travel-agency-popular-small wp-post-image" alt="<?php echo $cat_img['alt']; ?>" loading="lazy" >									</a>
+               <a href="<?php echo get_category_link( $cat->term_id ) ?>">
+               <img width="433" height="433" src="<?php echo $image_url; ?>" class="attachment-travel-agency-popular-small size-travel-agency-popular-small wp-post-image" alt="<?php echo $cat_img['alt']; ?>" loading="lazy" >									</a>
                <span class="price-holder"><span>Starting @ <strong>Rs. <?php echo $cat_price; ?>/-</strong></span></span>									
                <div class="text-holder">
                   <h3 class="title"><a href="<?php echo get_category_link( $cat->term_id ) ?>"><?php echo $cat->name; ?></a></h3>
@@ -92,13 +94,19 @@ $category_block_description = get_field('category_block_description');
 <?php
 $packages_block_title = get_field('packages_block_title');
 $packages_block_description = get_field('packages_block_description');
+$pack_block_underline = get_field('packages_block_underline_image');
 ?>
 <section class="our-deals" id="deal_section">
     <div class="container">
       <?php if(!empty($packages_block_title) || !empty($packages_block_description)): ?>
         <header class="section-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
-         <?php if(!empty($packages_block_title)){ ?><h2 class="section-title"><?php echo $packages_block_title; ?></h2> <?php } ?>
-         <?php if(!empty($packages_block_description)): ?>
+         <?php if(!empty($packages_block_title)){ ?><h2 class="section-title <?php echo $pack_block_underline ? 'no-bottom-padding' : 'ul-green' ?>"><?php echo $packages_block_title; ?></h2> <?php } 
+
+         if($pack_block_underline){
+            echo '<img src ="'.get_stylesheet_directory_uri().'/images/big-separator.png">';
+         }
+
+         if(!empty($packages_block_description)): ?>
          <div class="section-content">
             <p><?php echo $packages_block_description; ?></p>
          </div>
@@ -129,7 +137,7 @@ $packages_block_description = get_field('packages_block_description');
                   <a href="<?php echo get_the_permalink($package); ?>">
                   <img width="410" height="250" src="<?php echo get_the_post_thumbnail_url($package); ?>" alt="" loading="lazy">
                   </a>
-                  <span class="price-holder"><span><?php if(!empty($package_discounted_price)){ ?><strike><?php echo 'INR '. $package_original_price; ?></strike> <?php echo 'INR '. $package_discounted_price; } else { echo 'INR '. $package_original_price; } ?></span></span><span class="discount-holder"><?php if(!empty($package_discount_percentage)){ ?><span><?php echo $package_discount_percentage; ?>%</span><?php }?></span>															
+                  <span class="price-holder"><span><?php if(!empty($package_discounted_price)){ ?><strike><?php echo 'INR '. $package_original_price; ?></strike> <?php echo 'INR '. $package_discounted_price; } else { echo 'INR '. $package_original_price; } ?></span></span><?php if(!empty($package_discount_percentage)){ ?><span class="discount-holder"><span><?php echo $package_discount_percentage; ?>%</span></span><?php }?>															
                 </div>
                 <div class="text-holder">
                   <h3 class="title"><a href="<?php echo get_the_permalink($package); ?>"><?php echo get_the_title($package); ?></a></h3>
@@ -187,15 +195,24 @@ $packages_block_description = get_field('packages_block_description');
 
 <?php get_template_part('template-parts/homepage-slider'); ?>
 
+<?php
+$testi_block_underline = get_field('testimonial_block_underline_image');
+
+?>
 <section class="testimoinal" id="testimonial_section">
   <div class="container">
     <header class="section-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; 
       animation-delay: 0.1s; animation-name: fadeInUp;">
-      <h2 class="section-title">Testimonials</h2>
+      <h2 class="section-title <?php echo $testi_block_underline ? 'no-bottom-padding' : 'ul-green' ?>">Testimonials</h2>
       <!-- <div class="section-content">
         <p>Show your testimonial here. You can modify this section from Appearance &gt; 
             Customize &gt; Home Page Settings &gt; Testimonial Section.</p>
       </div> -->
+      <?php
+      if($pack_block_underline){
+            echo '<img src ="'.get_stylesheet_directory_uri().'/images/big-separator.png">';
+         }
+        ?>
     </header>
   </div>
   <div class="testimonial-holder wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" 

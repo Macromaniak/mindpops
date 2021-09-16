@@ -16,7 +16,9 @@
     */
     do_action( 'travel_agency_doctype' );   
 ?>
-<head itemscope itemtype="https://schema.org/WebSite">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
 
 <?php     
     /**
@@ -31,7 +33,7 @@
 
 </head>
 
-<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
+<body <?php body_class(); ?>>
 	
 <?php
     wp_body_open();
@@ -41,7 +43,172 @@
      * 
      * @hooked travel_agency_header - 20     
     */
-    do_action( 'travel_agency_header' ); ?>
+    //do_action( 'travel_agency_header' ); ?>
+
+
+<header class="main-header-new">
+    <div class="header-mobile-view">
+        <!-- <div class="mobile-grid"> -->
+        <div class="mobile-header-one">
+        <div class="social-left-mob social-left-mob-icon">
+            <div class="social-media">
+                <ul>
+                    <?php if(!empty($facebook = get_field('social_facebook', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $facebook; ?>"><i class="fa fa-facebook"></i></a></li>
+                    <?php } ?>
+
+                    <?php if(!empty($twitter = get_field('social_twitter', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $twitter; ?>"><i class="fa fa-twitter"></i></a></li>
+                    <?php } ?>
+
+                    <?php if(!empty($linkedin = get_field('social_linkedin', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $linkedin; ?>"><i class="fa fa-linkedin"></i></a></li>
+                    <?php } ?>
+
+                    <?php if(!empty($insta = get_field('social_instagram', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $insta; ?>"><i class="fa fa-instagram"></i></a></li>
+                    <?php } ?>
+
+                </ul>
+            </div>  
+        </div>
+        <div class="social-left-mob social-left-mob-menu">
+               <div class="mobile-menu-wrapper">
+                    <button id="primary-toggle-button" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".close-main-nav-toggle"><i class="fa fa-bars"></i></button>
+
+                    <nav id="mobile-site-navigation" class="main-navigation mobile-navigation">        
+                        <div class="primary-menu-list main-menu-modal cover-modal" data-modal-target-string=".main-menu-modal">
+                            <button class="close close-main-nav-toggle" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".main-menu-modal">
+                                <?php _e( 'CLOSE', 'travel-agency'); ?>
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <div class="mobile-menu">
+                                <?php
+                                    wp_nav_menu( array(
+                                        'theme_location' => 'main-menu',
+                                        'menu_id'        => 'Header Menu',
+                                        'menu_class'     => 'nav-menu main-menu-modal',
+                                        'fallback_cb'    => 'travel_agency_primary_menu_fallback',
+                                    ) );
+                                ?>
+                            </div>
+                        </div>
+                    </nav><!-- #mobile-site-navigation -->
+                </div> 
+        </div>
+        </div><!--mobile-header-one-->
+        <div class="mobile-log">
+              <?php 
+              $logo = get_field('logo', 'theme_options'); 
+            if( $logo) { ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+                </a>
+            <?php }  else { ?>
+            
+            <div class="text-logo">
+                <?php if ( is_front_page() ) : ?>
+                    <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+                <?php else : ?>
+                <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
+                <?php endif;
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) { ?>
+                <p class="site-description" itemprop="description"><?php echo esc_html( $description ); /* WPCS: xss ok. */ ?></p>
+                <?php
+                } ?>
+            </div>
+        <?php } ?>
+        </div><!--mobile-log-->
+    <!-- </div> --><!--mobile-grid-->
+    </div><!--header-mobile-view-->
+
+<!--**********Full header*****************-->
+
+    <div class="header-full-view">
+        <div class="main-header-one">
+        <div class="header-email">
+            <?php if(!empty(get_field('social_email', 'theme_options'))){ ?>
+               <a href="mailto:<?php echo get_field('social_email', 'theme_options'); ?>"> <i class="fa fa-envelope"></i> <span><?php echo get_field('social_email', 'theme_options'); ?></span></a>
+            <?php } ?>
+        </div>
+        <div class="social-media">
+                <ul>
+                    <?php if(!empty($facebook = get_field('social_facebook', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $facebook; ?>"><i class="fa fa-facebook"></i></a></li>
+                    <?php } ?>
+
+                    <?php if(!empty($twitter = get_field('social_twitter', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $twitter; ?>"><i class="fa fa-twitter"></i></a></li>
+                    <?php } ?>
+
+                    <?php if(!empty($linkedin = get_field('social_linkedin', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $linkedin; ?>"><i class="fa fa-linkedin"></i></a></li>
+                    <?php } ?>
+
+                    <?php if(!empty($insta = get_field('social_instagram', 'theme_options'))){ ?>
+                    <li><a href="<?php echo $insta; ?>"><i class="fa fa-instagram"></i></a></li>
+                    <?php } ?>
+
+                </ul>
+        </div>
+    </div>
+    <div class="header-new-second">
+        <div class="logo-box">
+            <?php 
+              $logo = get_field('logo', 'theme_options'); 
+            if( $logo) { ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+                </a>
+            <?php }  else { ?>
+            
+            <div class="text-logo">
+                <?php if ( is_front_page() ) : ?>
+                    <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+                <?php else : ?>
+                <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
+                <?php endif;
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) { ?>
+                <p class="site-description" itemprop="description"><?php echo esc_html( $description ); /* WPCS: xss ok. */ ?></p>
+                <?php
+                } ?>
+            </div>
+        <?php } ?>
+        </div>
+        
+        <div class="menu-box">
+            <div class="nav-holder">
+            
+
+                <nav id="site-navigation" class="main-navigation">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'main-menu',
+                            'menu_id'        => 'Header Menu',
+                            'fallback_cb'    => 'travel_agency_primary_menu_fallback',
+                        ) );
+                    ?>
+                </nav><!-- #site-navigation --> 
+            </div>
+        </div>
+        <?php 
+        $phone = get_field('header_right_phone', 'theme_options'); 
+        if($phone ){ ?>
+        <div class="call-box">
+            <span><i class="fas fa-phone fa-rotate-90" aria-hidden="true"></i></span>
+            <?php  
+                
+                if( $phone ) echo '<a href="tel:' . $phone . '" class="tel-link"><span class="phone">' . $phone . '</span></a>';
+            ?>
+            
+        </div>
+    <?php } ?>
+    </div>
+    </div><!--header-full-view-->
+ 
+</header>
 <div class="float-sm">
     <ul id="social_side_links">
         <li> 

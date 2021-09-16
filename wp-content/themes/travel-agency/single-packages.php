@@ -52,14 +52,17 @@
    .tabs{
    padding-top: 20px;
    }
-   .our-deals, .common-contact {
-   padding: 15px 0;
+   .our-deals {
+   padding: 170px 0 15px;
+   }
+   .common-contact{
+      padding-top: 0px;
    }
 </style>
 <section class="our-deals" id="deal_section">
    <div class="container">
       <header class="page-header text-left" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
-         <h1 class="page-title"><?php the_field('places_covered'); ?></h1>
+         <h1 class="page-title ul-green"><?php the_field('places_covered'); ?></h1>
       </header>
       <div class="grid package-single-row">
          <div class="col-7">
@@ -88,10 +91,15 @@
                   <li>Holiday Category:<span class="subtxt">
                   	<?php
                			$cats = get_the_terms($post->ID,'packagescategories');
-                 
+                     $cat_count = 0;
                  		foreach($cats as $cat) {
-                 		    if($cat->parent !=0)
-                 			echo $cat->name.', ';
+                 		   if($cat->parent !=0)
+                        {
+                           if($cat_count>0)
+                           echo ', ';
+                 		      echo $cat->name;
+                           $cat_count++;
+                        }
                  		}
                			?>
                   </span></li>
@@ -104,10 +112,17 @@
                   <?php } 
                   if(!empty(get_field('note'))){
                   ?>
+
                   <li>Note:<span class="subtxt"><?php the_field('note'); ?></span></li>
+                  <?php } 
+                  if(!empty(get_field('valid_till'))){
+                  ?>
+                  
+                  <li>Valid Till:<span class="subtxt"><?php the_field('valid_till'); ?></span></li>
                   <?php } ?>
-                  <li><a href="<?php echo get_site_url(); ?>/terms-and-conditions/">Terms and Conditions</a>
+                  
                </ul>
+               <p><a href="<?php echo get_site_url(); ?>/terms-and-conditions/">Terms and Conditions</a></p>
                <div class="row buttons buttons_single-package">
                   <a href="" class="btn-more popmake-133 pum-trigger">Enquire Now</a>
                   <a href="tel:<?php echo get_field('header_right_phone', 'theme_options'); ?>" class="btn-more btn-call">Call Now</a>
@@ -119,7 +134,7 @@
       </div>
    </div>
 </section>
-<section class="common-contact" id="deal_section">
+<section class="common-contact pt-0" id="deal_section">
    <div class="container">
       <div class="grid wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" 
          style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
@@ -149,35 +164,15 @@
                               <span class="itinerary-title"><?php echo $itinerary_title; ?></span>
                            </div>
                            
-                           <!--<div class="grid flex-row-reverse grid-second grid-left-right">-->
-                           <!--   <div class="col-8">-->
-                           <!--      <div class="cnt-destination">-->
-                           <!--         <h3><?php// echo $title_itinerary; ?></h3>-->
-                           <!--         <p><?php //echo $destination['content']; ?></p>-->
-                           <!--         <div class="night-stay">-->
-                           <!--            <?php// $title_parts = explode(':', $title_itinerary);-->
-                           <!--               ?>-->
-                           <!--            <?php// if($i==sizeof($destinations)){ ?>-->
-                           <!--            <span>Tour concludes</span>-->
-                           <!--            <?php //} else{ ?>-->
-                           <!--            <i class="fas fa-bed" ></i>-->
-                           <!--            <span>Night Stay at</span>-->
-                           <!--            <span><?php// echo end($title_parts); ?></span>-->
-                           <!--            <?php// } ?>-->
-                           <!--         </div>-->
-                           <!--      </div>-->
-                           <!--   </div>-->
-                           <!--   <div class="col-4">-->
-                           <!--      <div class="img-destination">-->
-                           <!--         <img src="<?php// echo $destination['image']['url']; ?>">-->
-                           <!--      </div>-->
-                           <!--   </div>-->
-                           <!--</div>-->
-                          
+                          <?php
+                          // $image = $destination['image'];
+                          //           var_dump($image['sizes']['medium']);
+                          ?>
                            <div class="grid flex-row-reverse grid-second grid-left-right">
                               <div class="col-4">
                                  <div class="img-destination">
-                                    <img src="<?php echo $destination['image']['url']; ?>">
+                                    <img src="<?php
+                                     echo $destination['image']['sizes']['custom-size-itinerary']; ?>">
                                  </div>
                               </div>
                               <div class="col-8">

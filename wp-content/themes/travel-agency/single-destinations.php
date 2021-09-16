@@ -52,21 +52,48 @@
 
 		<div class="destination_content">
 			<h2><?php the_title(); ?></h2>
-			<?php echo the_content(); ?>
+			
 		</div>
+		<?php if('' !== get_the_content() ){ ?>
+		<div class="grid-desti-s">
+			<div class="col-6">
+				<?php the_content(); ?>
+			</div>
+			<div class="col-6">
+				<?php if($airport){ ?>
+		<div class="map-bx">
+			<?php echo $map; ?>
+		</div>
+		<?php } ?>
+			</div>
+		</div>
+		<?php }
+		else
+		{
+		?>
 		<?php if($airport){ ?>
 		<div class="map-bx">
 			<?php echo $map; ?>
 		</div>
 		<?php } ?>
-		<?php $place = get_field('place'); 
+		<?php } ?>
+		
+		<?php $place = get_field('place');
+		$places_to_visit_underline_image = get_field('places_to_visit_underline_image', 'theme_options');
+		$places_to_visit_section_titile = get_field('places_to_visit_section_titile', 'theme_options');
+		
     if($place) { ?>
 		<div class="places-to-visit">
 			<header class="section-header wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1s; 
       animation-delay: 0.1s; animation-name: fadeInUp;">
       
-      <h2 class="section-title">Places To Visit</h2>
-  	
+      <h2 class="section-title <?php echo $places_to_visit_underline_image ? 'no-bottom-padding' : 'ul-green' ?>"><?php echo $places_to_visit_section_titile; ?></h2>
+  		
+  		<?php
+      if($places_to_visit_underline_image){
+            echo '<img src ="'.get_stylesheet_directory_uri().'/images/big-separator.png">';
+         }  	
+      ?>
     
     </header>
     

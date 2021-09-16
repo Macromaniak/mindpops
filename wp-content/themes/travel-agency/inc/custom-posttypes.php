@@ -80,6 +80,7 @@ function destination_register() {
         'capability_type' => 'post', 
         'hierarchical' => true,
         'has_archive' => true,  
+        'exclude_from_search' => false,
         'menu_position' => null, 
         'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',) 
     );   
@@ -123,6 +124,7 @@ function package_register() {
         'hierarchical' => true,
         'has_archive' => true,  
         'show_in_menu'        => true,
+        'exclude_from_search' => false,
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
         'menu_position'       => 5,
@@ -135,7 +137,8 @@ function package_register() {
     register_taxonomy( 'packagescategories', array('packages', 'destinations'), array(
         'hierarchical' => true, 
         'label' => 'Package Categories', 
-        'singular_label' => 'Package Category', 
+        'singular_label' => 'Package Category',
+        'show_admin_column' => true,
         'rewrite' => array( 'slug' => 'packagescategories', 'with_front'=> false )
         )
     );
@@ -159,7 +162,8 @@ function package_register() {
     register_taxonomy( 'package-type', array('packages'), array(
         'hierarchical' => true, 
         'label' => 'Package Types', 
-        'singular_label' => 'Package Types', 
+        'singular_label' => 'Package Types',
+        'show_admin_column' => true,
         'rewrite' => array( 'slug' => 'package-type', 'with_front'=> false )
         )
     );

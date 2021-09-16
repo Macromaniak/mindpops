@@ -48,10 +48,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+Pro&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto:wght@900&family=Source+Sans+Pro&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto:wght@900&family=Source+Sans+Pro&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans:wght@600&family=PT+Sans&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto:wght@900&family=Source+Sans+Pro&display=swap');
+
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+     scroll-behavior: smooth;
 }
 
 body {
@@ -284,9 +291,27 @@ select,
 optgroup,
 textarea {
     color: #666;
-    font-family: var(--primary-font);
+    /*font-family: var(--primary-font);*/
+    font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     line-height: 1.750em;
+}
+
+.menu-header-menu-container ul li a
+{
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4
+{
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+p{
+    font-family: 'PT Sans', sans-serif !important;
 }
 
 h1,
@@ -434,12 +459,13 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    font-size: 13px;
-    line-height: 26px;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 600;
     color: #fff;
     text-transform: uppercase;
-    font-family: var(--secondary-font);
+    /*font-family: var(--secondary-font);*/
+    font-family: 'PT Sans', sans-serif;
     background: var(--primary-color);
     border-radius: 5px;
     border: 1px solid var(--primary-color);
@@ -573,7 +599,7 @@ a:active {
     margin: 0;
     padding-left: 0;
     font-size: 15px;
-    font-family: var(--secondary-font);
+    /*font-family: var(--secondary-font);*/
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -592,8 +618,9 @@ a:active {
     display: block;
     text-decoration: none;
     color: #111;
-    padding: 19px 0 21px;
+    padding: 10px 0px;
     transition: linear 0.2s;
+    font-weight: 600;
 }
 
 .main-navigation ul li.menu-item-has-children {
@@ -673,7 +700,8 @@ a:active {
     text-align: center;
 }
 .section-header .section-title {
-    font-family: Montserrat,sans-serif;
+    /*font-family: Montserrat,sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
     font-size: 36px;
     font-weight: 500;
     line-height: 1.25em;
@@ -682,7 +710,7 @@ a:active {
     position: relative;
     color: #111;
 }
-.section-header .section-title:after {
+.section-header .section-title.ul-green:after {
     background: #32b67a;
     content: '';
     height: 3px;
@@ -711,7 +739,7 @@ a:active {
 }
 .popular-destination .grid .col .img-holder img {
     vertical-align: top;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 }
 .popular-destination .grid .col .price-holder {
     position: absolute;
@@ -725,6 +753,12 @@ a:active {
 }
 .popular-destination-home .grid .col .price-holder {
     top: 0;
+}
+.popular-destination-home{
+    padding-bottom: 40px;
+}
+.page-id-5 .our-deals{
+    padding-top: 0px;
 }
 .popular-destination .grid .col .price-holder>span {
     display: block;
@@ -977,9 +1011,10 @@ a:active {
 .featured-trip .grid-latest .text-holder .title, .our-deals .grid-latest .text-holder .title {
     margin-top: 10px;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 15px;
     padding: 0 30px;
+    word-wrap: break-word;
 }
 .our-deals .grid .text-holder .title a {
     color: #000;
@@ -1038,7 +1073,7 @@ dfn, cite, em, i {
     border-radius: 20px;
     text-transform: uppercase;
     padding: 2px 30px;
-    font-family: Montserrat,sans-serif;
+    /*font-family: Montserrat,sans-serif;*/
     -webkit-transition: linear .2s;
     -moz-transition: linear .2s;
     transition: linear .2s;
@@ -1066,7 +1101,7 @@ dfn, cite, em, i {
     border-radius: 5px;
     text-transform: uppercase;
     padding: 6px 29px;
-    font-family: Montserrat,sans-serif;
+    /*font-family: Montserrat,sans-serif;*/
     -webkit-transition: linear .2s;
     -moz-transition: linear .2s;
     transition: linear .2s;
@@ -1224,6 +1259,9 @@ dfn, cite, em, i {
     .blog-section .grid .post .img-holder img{
         width: 100%;
     }
+    .form-col .wpcf7-submit{
+        width: 50% !important;
+    }
 
 }
 @media (max-width: 768px){
@@ -1264,12 +1302,12 @@ dfn, cite, em, i {
     }
 }
 
-@media only screen and (min-width: 415px) {
+/*@media only screen and (min-width: 415px) {
     .page-template-package-offers #deal_section
     {
         padding-top: 140px;
     }
-}
+}*/
 
 .main-navigation ul ul li {
     margin: 0 0 2px;
@@ -1992,7 +2030,7 @@ object {
 
 .banner .form-holder {
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     margin-right: -50%;
     text-align: center;
@@ -2014,7 +2052,7 @@ object {
     font-size: 58px;
     line-height: 1.25em;
     font-weight: 500;
-    font-family: var(--secondary-font);
+    /*font-family: var(--secondary-font);*/
     margin: 0;
 }
 
@@ -2400,7 +2438,9 @@ object {
 /*#primary .site-main{padding-right: 50px;}*/
 
 #primary .post {
-    margin: 30px 0 70px;
+    /*margin: 30px 0 70px;*/
+    padding-top: 170px;
+    padding-bottom: 40px;
 }
 
 #primary .post .entry-header {
@@ -2964,7 +3004,7 @@ object {
     margin-bottom: 30px;
 }
 
-.page-header .page-title:after {
+.page-header .page-title.ul-green:after {
     content: '';
     position: absolute;
     top: 100%;
@@ -3865,7 +3905,7 @@ object {
 }
 
 .site-footer .footer-t {
-    padding: 70px 0 30px;
+    padding: 50px 0 10px;
     border-bottom: 1px solid #33383a;
 }
 
@@ -3874,7 +3914,10 @@ object {
     width: 25%;
     padding: 0 15px;
 }
-
+.textwidget p,
+.site-footer .widget ul li a{
+    font-size: 15px;
+}
 .site-footer .widget {
     margin: 0 0 40px;
 }
@@ -5356,7 +5399,7 @@ object {
     color: #111;
 }
 
-.blog-section .section-header .section-title:after {
+.blog-section .section-header .section-title.ul-green:after {
     background: var(--primary-color);
     content: '';
     height: 3px;
@@ -8194,6 +8237,11 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     top: 54px;
 }
 
+#deal_section
+{
+    padding-top: 10px!important;
+}
+
 /* My code*/
 /* Styling for current content */
 .tabs__control {
@@ -8285,11 +8333,19 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .form-col{
     background: #f6f6f6;
-    padding-top: 75px !important;
+    padding-top: 0px !important;
     box-shadow: 0 20px 38px rgb(0 0 0 / 15%);
 }
+.form-col p{
+    margin: 0;
+}
+.form-col h3{
+    text-align: center;
+    padding-bottom: 15px;
+    margin-top: 30px;
+}
 .form-col .wpcf7-submit{
-    width: 30% !important;
+    width: 30% ;
     margin-top: 15px;
     border: 2px solid #32b67a;
     border-radius: 5px;
@@ -8343,7 +8399,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .package-left{
     background: #eeeeee;
    /* background: #FCF6F5FF;*/
-    padding: 20px;
+    padding: 40px;
 }
 .package-left h2, .package-left ul li
 {
@@ -8360,10 +8416,17 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 }
 .package-left .subtxt{
     margin-left: 5px;
-    color: var(--primary-color);
+   /* color: #eead56;*/
+}
+.package-left p a:hover{
+    text-decoration: none;
+    color: #eead56;
 }
 .no-results{
-    padding:80px 0px;
+    padding:140px 0px 80px;
+}
+.no-results .page-content form{
+    display: none;
 }
 .flex-row-reverse{
     display: flex;
@@ -8485,7 +8548,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     padding: 5px 25px;
     border-radius: 20px;
     text-transform: uppercase;
-    font-family: Montserrat,sans-serif;
+    /*font-family: Montserrat,sans-serif;*/
     -webkit-transition: linear .2s;
     -moz-transition: linear .2s;
     transition: linear .2s;
@@ -8614,7 +8677,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
       cursor: pointer;
       color: #ffffff;
       /*background: linear-gradient(135deg, rgb(15 81 50) 0%, rgb(9 73 44) 100%);*/
-      background: #0d0d75db;
+      background: #32b67a;
       width: auto;
       height: 50px;
       float: right;
@@ -8711,11 +8774,14 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     background: #0000005c;
 }
 .img-over-txt h3{
-    font-size: 25px;
+    font-size: 18px;
     position: relative;
-    top: 10px;
+    top: 5px;
     left: 10px;
-    font-weight: 400;
+    font-weight: 500;
+}
+.img-over-txt h3 a{
+    color: #000;
 }
 .homeslider .slick-slide{
     margin:0px 5px !important;
@@ -8787,8 +8853,11 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     margin-left: 0px;
 }
 #social_side_links li{
-    padding: 10px 15px 10px 15px;
-    background: #fff;
+    padding: 10px 15px;
+    background: #32b67a;
+    color: #fff;
+    border-radius: 50px;
+    margin-bottom: 10px;
 }
 #social_side_links li:hover #social_side_links li a svg,
 #social_side_links li:hover,
@@ -8797,7 +8866,9 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     
 }
 #social_side_links li a svg{
-    font-size: 30px;
+    font-size: 20px;
+    color: #fff;
+    vertical-align: sub;
 }
 /* fix blank or flashing items on carousel */
 .owl-carousel .item {
@@ -8809,7 +8880,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .homeslider_section .owl-nav,
 .places-to-visit .owl-nav{
     margin: 0 auto;
-    /*display: block !important;*/
+    display: block !important;
     text-align: center;
     margin-top: 25px;
 }
@@ -8846,8 +8917,8 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     width: 100%;
     background: #fff;
     border: 1px solid #ccc;
-    padding: 15px;
-    height: 165px;
+    padding: 5px 10px;
+    height: 130px;
 }
 .place-box{
     color: #000;
@@ -8921,6 +8992,8 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     color: #fff;
     text-align: right;
     padding: 0px 15px;
+    display: inline-flex;
+    width: 100%;
 }
 .social-media ul{
     display: inline-flex;
@@ -8940,8 +9013,9 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     background: #fff;
     width: 100%;
     display: inline-flex;
-    padding: 0px 15px;
+    padding: 10px 15px;
     border-bottom: 1px solid #e5e5e5;
+    height: 70px;
 }
 .main-header-new{
     position: fixed;
@@ -8951,6 +9025,12 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .logo-box{
     width: 20%;
     float:left;
+}
+.logo-box img{
+    /*width: 70%;
+    padding-top: 10px;*/
+    width: 208px;
+    height: auto;
 }
 .logo-box .text-logo{
     display: inline-block;
@@ -8971,16 +9051,17 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     width: 60%;
     float: left;
     padding-left: 50px;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 .call-box{
     float: left;
     width: 20%;
-    padding-top: 28px;
+    padding-top: 10px;
     text-align: right;
+    padding-right: 10px;
 }
 .call-box .tel-link{
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 500;
     letter-spacing: -0.03em;
     transition: linear 0.2s;
@@ -8993,7 +9074,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     border: none;
 }
 .call-box svg{
-    font-size: 28px;
+    font-size: 22px;
     margin-left: 10px;
     color: #32b67a
 }
@@ -9007,7 +9088,216 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     color: #32b67a;
     text-transform: capitalize;
 }
+.error404 .page_error{
+    padding-top: 260px;
+}
+.grid-desti-s{
+    display: inline-flex;
+}
+.grid-desti-s .col-6{
+    width: 50%;
+    float: left;
+}
+.search-bar-box{
+    background: #cccc;
+    display: inline-flex;
+    width: 75%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 4px 0 rgb(0 0 0 / 19%);
+    border-radius: 50px;
+}
+.search-bar-box input[type="text"]{
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #000;
+}
+.search-bar-box input[type="text"]:focus{
+    outline: none;
+}
+.search-bar-box .a_sub{
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: #000;
+}
+.tax-packagescategories .our-deals{
+    padding-bottom: 0;
+}
+.header-email{
+    float: left;
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+.header-email a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 1s;
+}
+.header-email a:hover{
+    color: #333;
+}
+.social-media{
+    float: right;
+    width: 50%;
+}
+.header-mobile-view{
+    display: none;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: #fff;
+    width: 100%;
+  
+}
 
+.mobile-header-one{
+    width: 100%;
+    background: #32b67a;
+    overflow: hidden;
+    padding: 0px 15px;
+}
+.social-left-mob{
+    width: 50%;
+    float: left;
+}
+.social-left-mob .social-media {
+    float: left;
+    width: 100%;
+}
+.mobile-log{
+    text-align: center;
+    margin: 0;
+    height: auto;
+}
+.mobile-log img{
+    width: 50%;
+    padding-top: 5px;
+}
+.page-template-package-offers .section-header{
+    margin: 0px auto 30px;
+}
+
+
+#button {
+  display: inline-block;
+  background-color: #32b67a;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  padding: 5px 15px;
+  color: #fff;
+}
+#button:hover{
+    background-color: #32b67a;
+}
+#button svg{
+    font-size: 20px;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+.banner-inner-page{
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+.footer-m{
+    border-bottom: 1px solid #33383a;
+    padding: 10px 0px;
+}
+.footer-m ul{
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+}
+.footer-m ul li{
+    padding-right: 25px;
+}
+.footer-m ul li a{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+}
+.footer-m ul li a:hover{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.no-bottom-padding
+{
+    padding-bottom: 0!important;
+}
+#primary .post .post-thumbnail img{
+    width: 100%;
+}
+.page-id-239 .our-deals .grid{
+    padding-top: 20px !important;
+}
+.search-result{
+    padding: 150px 0px 80px;
+}
+.search-result-h2{
+    text-align: center;
+    text-transform: capitalize;
+}
+.search-grid{
+
+}
+.search-content-bx{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.search-content-bx h2{
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+.search-content{
+    width: 33.33%;
+    float: left;
+    padding: 20px 15px;
+    height: 150px;
+}
+.search-results #primary .post .post-thumbnail img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.search-rslt{
+    padding-top: 170px;
+}
+.search-rslt .post{
+    padding: 20px 0px !important;
+}
+
+.pack-type-packs-section
+{
+    margin-top: 30px;
+}
+.pack-filter-section
+{
+    margin-top: 50px;
+}
+.offer-page-title-section
+{
+    margin-top: 50px;
+}
 /*My code end*/
 @media only screen and (min-width: 1024px){
 .pum-container.pum-responsive.pum-responsive-medium {
@@ -9016,8 +9306,32 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     margin: 0 auto !important;
 }
 
+
 }
 @media only screen and (max-width: 1024px){
+.banner-inner-page{
+    height: 500px;
+}
+#button{
+    bottom: 60px;
+    right: 0;
+}
+.header-full-view{
+    display: none;
+}
+.header-mobile-view{
+    display: block;
+}
+.grid-desti-s {
+    display: inline-block;
+}
+.grid-desti-s .col-6 {
+    width: 100%;
+    float: left;
+}
+.destination_content{
+    padding-top: 20px;
+}
 .banner .form-holder{
     top: 65%;
 }
@@ -9047,7 +9361,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     font-size: 16px;
 }
 .social-media ul li{
-    padding: 2px 10px;
+    padding: 7px 10px 0px 10px;
 }
 .main-header-new{
     max-width: 100%;
@@ -9059,7 +9373,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
     padding: 5px 0px;
 }
 .logo-box img{
-    width: 100%;
+    width: auto;
     margin: 0 auto;
     display: block;
 }
@@ -9072,8 +9386,34 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .blog-section .grid .post .text-holder .entry-content{
     height: auto;
 }
+.package-single-row .col-7,
+.package-single-row .col-5{
+    width: 100%;
+    float: left;
+}
+.error404 .page_error{
+    padding: 180px 0px 50px;
+}
+.footer-m ul{
+    display: inline-block;
+}
+.footer-m ul li{
+    padding-bottom: 10px;
+    padding-right: 0;
+}
+}
+@media all and (device-width: 768px) and (device-height: 1024px){
+    .page-header .page-title{
+        padding-top: 50px;
+    }
+    .search-result {
+        padding: 220px 0px 80px;
+    }
 }
 @media only screen and (max-width: 991px) {
+.single-packages .page-header .page-title{
+    padding-top: 15px;
+}
 .section-header .section-title{
     font-size: 25px;
 }
@@ -9140,10 +9480,10 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .popup-box-form-submit .grid-form input, 
 .popup-box-form-submit .grid-form select {
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
-    margin-bottom: 15px;
-    font-size: 15px;
+    margin-bottom: 5px;
+    font-size: 12px;
     background-color: #fff;
 }
 .common-contact .col-6 {
@@ -9204,6 +9544,7 @@ body.rightsidebar .wpte-bf-checkout .wpte-bf-book-summary {
 .form-col{
     margin-bottom: 30px;
 }
+
 p{
     font-size: 15px;
     line-height: normal;
@@ -9230,7 +9571,7 @@ p{
     /*margin-left: 20px;*/
 }
 #social_side_links li{
-    padding: 10px 10px 10px 10px;
+    /*padding: 10px 10px 10px 10px;*/
 }
 #social_side_links li a svg {
     font-size: 20px;
@@ -9238,7 +9579,7 @@ p{
 .page-header .page-title{
     font-size: 30px;
     line-height: normal;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
 }
 .grid-common h2 {
     font-size: 24px;
@@ -9250,7 +9591,7 @@ p{
     padding-top: 30px !important;
 }
 .page-template-package-offers .our-deals{
-    padding-top: 80px;
+    padding-top: 40px;
 }
 .grid {
     margin: 0px 0px 0px;
@@ -9311,7 +9652,16 @@ p{
 {
     padding: 20px 0;
 }
-
+.grid-form p{
+    margin-bottom: 0px;
+}
+.search-content{
+    width: 100%;
+    height: auto;
+}
+.search-result {
+    padding: 180px 0px 80px;
+}
 }
 /*991 end*/
 
@@ -9388,6 +9738,12 @@ p{
 
     .wp-travel-toolbar .wte-filterby-dropdown:before {
         display: none;
+    }
+    .search-result {
+        padding: 120px 0px 80px;
+    }
+    .search-rslt {
+        padding-top: 110px;
     }
 }
 
@@ -9557,6 +9913,7 @@ p{
         background: rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         font-size: 15px;
+        
     }
 
     .main-navigation ul li a:hover,
@@ -10203,6 +10560,9 @@ p{
     border-bottom: 0;
 }
 @media only screen and (max-width:767px) {
+    #primary .post{
+        padding-top: 130px;
+    }
     #wte__booking .wte-global-popup .mfp-close {
         right: 28px;
     }
